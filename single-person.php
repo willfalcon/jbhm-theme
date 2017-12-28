@@ -1,12 +1,4 @@
-<?php
-
-  if ( get_field( 'header_img' ) ) {
-    get_header( 'header_img' );
-  } else {
-    get_header();
-  }
-
-?>
+<?php get_header(); ?>
 
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
     <div <?php post_class(); ?>>
@@ -55,15 +47,6 @@
           <?php the_field( 'bio' ); ?>
         <?php endif; ?>
 
-        <?php if ( have_rows( 'awards' ) ) : ?>
-          <h5 class="mt-4"><strong>Awards</strong></h5>
-          <ul class="award-list">
-            <?php while ( have_rows( 'awards' ) ) : the_row(); ?>
-              <li><span class="award-name"><?php the_sub_field( 'name' ); ?></span></li>
-            <?php endwhile; ?>
-          </ul>
-        <?php endif; ?>
-
         <?php if ( get_field( 'vision' ) ) : ?>
           <h5 class="mt-4"><strong>Firm Vision</strong></h5>
           <?php the_field( 'vision' ); ?>
@@ -98,6 +81,7 @@
         </div>
       </div>
     </div>
+
   </div><!-- .person -->
 
   <?php endwhile; else: ?>
