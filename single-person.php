@@ -69,23 +69,8 @@
 
     </div>
 
-
-<<<<<<< HEAD
-
-    <div class="cd-blog-nav mt-5 mb-4">
-      <div class="row w-100">
-        <div class="col-6 w-50 text-left">
-          <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous' ); ?>
-        </div>
-        <div class="col-6 w-50 text-right">
-          <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next <i class="fa fa-caret-right accent"></i>' ); ?>
-        </div>
-      </div>
-    </div>
-=======
     <?php get_template_part( 'prev-next-links' ); ?>
 
->>>>>>> 4640d68fc8bde4f771ca8321e6574a21a6d82af4
   </div><!-- .person -->
 
   <?php endwhile; else: ?>
