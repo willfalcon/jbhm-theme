@@ -46,7 +46,7 @@
 
       <?php endif; ?>
 
-      <?php // Output the title of the Single Post, without a link. ?>
+      <?php // Output the title of the Single Post we're on, without a link. ?>
       <li class="breadcrumb-item active" aria-current="page">
         <?php echo $queriedObject->post_title; ?>
       </li>
@@ -58,7 +58,7 @@
         $noTax = true;
       }
     ?>
-    
+
     <?php if ( ! $noTax ) : ?>
       <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
     <?php endif; ?>

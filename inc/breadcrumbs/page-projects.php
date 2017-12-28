@@ -2,10 +2,6 @@
   /*
     Projects Page breadcrumbs
   */
-
-  $queriedObject = get_queried_object();
-
-
 ?>
 
 <nav class="cd-breadcrumb" id="page-projects-breadcrumbs" aria-label="breadcrumb" role="navigation">
