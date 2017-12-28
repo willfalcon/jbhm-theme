@@ -1,0 +1,73 @@
+html {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+body {
+  font-family: "acumin-pro", Arial, sans-serif;
+  color: #4A4A4A;
+}
+
+H1 {
+
+}
+
+H2 {
+  Used on:
+    Single Project
+    Single Person
+  font-family: 'acumin-pro';
+  font-size: 2em (36px);
+  color: #000; (black)
+
+}
+
+H3 {
+  Used on: Services, Industries
+  Single Person (field: position)
+    font-family: 'acumin-pro';
+    font-size: 1.333em (24px);
+    color: #fff; (white)
+
+  VARIATION: People
+    Used on:
+      People Archive (field: position)
+
+      Front Page project gallery (field: title)
+
+  .h-size-adjust { /*Goes on containing element */
+    font-size: .83rem (20px)
+  }
+}
+
+H4 {
+  Used on:
+
+  font-size: 1.333em (24px)
+
+  VARIATION:
+    Used on:
+      Front page project gallery (field: location)
+
+  .h-size-adjust { /*Goes on containing element */
+    font-size: .83rem (20px)
+  }
+}
+
+H5 {
+  Used on:
+
+
+}
+
+a {
+  /*Used on: Menu*/
+  font-family: 'acumin-pro';
+  font-size: 1em (18px):
+  color: #9B9B9B (dark-grey)
+
+}
+
+li {
+  line-height: 2;
+}
