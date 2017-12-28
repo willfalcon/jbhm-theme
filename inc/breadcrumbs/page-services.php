@@ -2,9 +2,6 @@
   /*
     Serices Page breadcrumbs
   */
-
-  $queriedObject = get_queried_object();
-
 ?>
 
 <nav class="cd-breadcrumb" id="page-services-breadcrumbs" aria-label="breadcrumb" role="navigation">

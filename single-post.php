@@ -62,7 +62,7 @@
 
           <div class="cd-blog-nav">
             <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Story' ); ?>
-            <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next Story <i class="fa fa-caret-right accent"></i>' ); ?>
+            <?php next_post_link( '<p class="blog-nav-link right">%link</p>', 'Next Story <i class="fa fa-caret-right accent"></i>' ); ?>
           </div>
 
         <?php endwhile; ?>

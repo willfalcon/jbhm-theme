@@ -23,6 +23,7 @@
     wp_enqueue_script( 'masonry', get_template_directory_uri() . '/assets/js/masonry.pkgd.min.js', array( 'jquery', 'images_loaded' ) );
     wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/dist/js/lightbox.min.js', array( 'jquery' ), false, true);
     wp_enqueue_script( 'flickity_js', get_template_directory_uri() . '/assets/flickity/flickity.pkgd.min.js', array( 'jquery' ), false );
+    wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr-custom.js' );
 
 
 
@@ -58,7 +59,7 @@
 /* Setup widget location */
 
   cd_create_widget( 'Footer Left', 'footer-left', 'Displays in the far left of the footer.' );
-  
+
   function cd_create_widget( $name, $id, $description ) {
   	register_sidebar(array(
   		'name' => __( $name ),

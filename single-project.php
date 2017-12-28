@@ -116,7 +116,7 @@
 
     <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
       <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
-      <?php next_post_link( '<p class="blog-nav-link">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
+      <?php next_post_link( '<p class="blog-nav-link right">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
     </div>
 
   <?php endwhile; else: ?>
