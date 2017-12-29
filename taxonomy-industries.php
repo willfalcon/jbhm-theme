@@ -8,7 +8,22 @@
 
 ?>
 
-<?php $currentTerm = get_queried_object(); ?>
+<?php
+  $currentTerm = get_queried_object();
+
+  $args = array(
+    'post_type' => 'project',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'industries',
+        'field' => 'slug',
+        'terms' => $currentTerm->slug
+      )
+    ),
+    'posts_per_page' => -1
+  );
+  $query = new WP_Query( $args );
+?>
 
 <div class="row">
   <div class="industry-title-wrap">
@@ -19,13 +34,13 @@
 
 <div class="row">
 
-<?php if ( have_posts() ) : ?>
+<?php if ( $query->have_posts() ) : ?>
 
   <div class="cd-gallery">
 
     <div class="cd-gallery-sizer"></div>
 
-    <?php while ( have_posts() ) : the_post(); ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <?php
 

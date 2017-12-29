@@ -9,7 +9,23 @@
 ?>
 
 
-<?php $currentTerm = get_queried_object(); ?>
+<?php
+  $currentTerm = get_queried_object();
+
+  $args = array(
+    'post_type' => 'project',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'services',
+        'field' => 'slug',
+        'terms' => $currentTerm->slug
+      )
+    ),
+    'posts_per_page' => -1
+  );
+  $query = new WP_Query( $args );
+
+?>
 
 <div class="row">
   <div class="industry-title-wrap">
