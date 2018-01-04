@@ -388,6 +388,7 @@ body {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   max-width: 100%;
+  float: left;
 }
 
 .cd-menu {
