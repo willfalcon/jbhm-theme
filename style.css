@@ -179,6 +179,7 @@ body {
 
 .cd-grid-content > h3 {
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 
