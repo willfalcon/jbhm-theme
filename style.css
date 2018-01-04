@@ -1043,17 +1043,15 @@ p.social-links {
 
 .blog-nav-link {
   width: 50%;
-
-}
-.no-flexbox .blog-nav-link {
   float: left;
+
 }
 
 .blog-nav-link.right {
   text-align: right;
 }
 
-.no-flexbox .cd-footer {
+.cd-footer {
   clear: both;
 }
 /*--------------------------------------------*/
