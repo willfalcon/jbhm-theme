@@ -299,9 +299,15 @@ body {
   width: 100%;
   height: auto;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fl-carousel-cell img {
@@ -310,6 +316,7 @@ body {
 }
 
 .flickity-viewport {
+  -webkit-transition: height 0.2s;
   transition: height 0.2s;
 }
 
@@ -537,6 +544,8 @@ body {
 
 
 .breadcrumb-industry-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -548,8 +557,10 @@ body {
   height: 150px;
   padding: .75rem 1rem;
   -webkit-transition: .5s;
+  -webkit-transition: all .5s;
   transition: all .5s;
-  transform: translateY(-200px);
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
   opacity: 0;
 }
 
