@@ -2,6 +2,7 @@ jQuery(document).ready(function($) {
 
   $('li.nav-item > a').addClass('nav-link');
   $('#quick_links_wrapper > ul').addClass('list-unstyled');
+  $('#industry_list').hide();
 
   //initialize Masonry plugin
   var $industryMasonry = $('.cd-gallery').masonry({
@@ -25,7 +26,11 @@ jQuery(document).ready(function($) {
 
   $('#breadcrumb_toggle').on('click', function() {
     if ($('#industry_list').data('expanded') == false) {
-      $('#industry_list').css('display', 'flex');
+      $('#industry_list').show();
+      $('#industry_list').css({
+        'transform': 'translateY(0px)',
+        'opacity': '1'
+      });
       $('#industry_list').data('expanded', true);
       $({deg: 0}).animate({deg: -180}, {
           duration: 300,

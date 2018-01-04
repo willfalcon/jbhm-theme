@@ -504,6 +504,8 @@ body {
   max-width: 100%;
   width: 100%;
   padding-right: 1rem;
+
+  position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -535,7 +537,7 @@ body {
 
 
 .breadcrumb-industry-list {
-  display: none;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -545,9 +547,10 @@ body {
           align-items: flex-start;
   height: 150px;
   padding: .75rem 1rem;
-  top: -200px;
   -webkit-transition: .5s;
-  transition: .5s;
+  transition: all .5s;
+  transform: translateY(-200px);
+  opacity: 0;
 }
 
 .breadcrumb-industry-list > li {
