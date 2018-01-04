@@ -527,6 +527,7 @@ body {
   padding-right: 1rem;
 
   position: relative;
+  clear: both;
 }
 
 @media screen and (max-width: 768px) {
