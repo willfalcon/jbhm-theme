@@ -376,10 +376,11 @@ body {
 .cd-nav {
   background-color: #595959;
   padding-left: 0px;
+  height: 110px;
+
 }
 
-.no-flexbox .cd-nav {
-  height: 110px;
+.flexbox .cd-nav {
   height: initial;
 }
 
