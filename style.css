@@ -383,11 +383,6 @@ body {
       -ms-flex: 1 2;
           flex: 1 2;
 }
-/*.cd-nav > .cd-menu {
-  -webkit-box-flex: 2;
-      -ms-flex: 2 1;
-          flex: 2 1;
-}*/
 
 #menu-main-menu {
   -ms-flex-pack: distribute;
@@ -401,7 +396,20 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  float: right;
   /*max-width: 100%;*/
+}
+
+.no-flexbox .cd-menu {
+  width: calc(100% - 318px);
+}
+
+@media (min-width: 768px) {
+  .navbar-expand-md .navbar-collapse {
+    display: block;
+    display: -ms-flexbox!important;
+    display: flex!important;
+  }
 }
 
 .cd-menu > ul {
@@ -435,6 +443,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  float: left;
 }
 
 .navbar-brand h1 {
