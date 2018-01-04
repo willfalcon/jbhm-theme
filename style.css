@@ -378,6 +378,11 @@ body {
   padding-left: 0px;
 }
 
+.no-flexbox .cd-nav {
+  height: 110px;
+  height: initial;
+}
+
 .cd-nav > a {
   -webkit-box-flex: 1;
       -ms-flex: 1 2;
