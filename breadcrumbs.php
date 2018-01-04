@@ -2,10 +2,6 @@
 
   $queriedObject = get_queried_object();
 
-  /*
-    TODO: Make '/projects' a list of all projects, then make "Projects" link in header link to industries archive page.
-  */
-
   // Don't show breadcrumbs on the front page.
   if ( ! is_front_page() ) :
 

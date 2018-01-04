@@ -409,6 +409,10 @@ body {
       flex-wrap: nowrap;
 }
 
+.cd-menu .nav-item {
+  display: inline-block;
+}
+
 
 /*.cd-nav li {
   margin-left: .5rem;
