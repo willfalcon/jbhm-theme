@@ -49,7 +49,7 @@
 
           <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>">
 
-            <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
+            <img class="img-fluid" src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
             <div class="frontpage-project-info">
 
