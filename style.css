@@ -281,9 +281,6 @@ body {
 /*-----------------------------------------------*/
 
 .cd-slider-nav {
-  /*position: absolute;
-  top: 0;
-  width: 100%;*/
   z-index: 10;
 }
 
@@ -941,7 +938,7 @@ p.social-links {
   margin-right: -15px;
 }
 .blog .news-archive {
-  width: 900px;
+  width: 1000px;
   margin: 0 auto;
   max-width: 100%;
 }
@@ -996,7 +993,10 @@ p.social-links {
   .cd-blog-card {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    /*max-height: 300px;*/
+    max-height: 300px;
+  }
+  .cd-blog-card h3 {
+    font-size: 1.2em;
   }
   .cd-blog-card > img {
     margin-top: 0px;
