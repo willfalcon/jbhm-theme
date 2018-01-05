@@ -9,8 +9,11 @@
 
       <div class="col-12 col-md-6 cd-blog-card">
 
-        <img src="<?php the_post_thumbnail_url('medium_large'); ?>" class="img-fluid"/>
+        <?php $img = get_field( 'featured_image' ); ?>
 
+        <?php if ( $img ) : ?>
+          <img src="<?php echo $img['sizes']['medium_large']; ?>" alt="<?php echo $img['alt']; ?>" class="img-fluid"/>
+        <?php endif; ?>
           <div class="cd-blog-desc">
 
             <div class="cd-blog-tails">
