@@ -290,6 +290,15 @@ body {
   max-height: 100vh;
 }
 
+.video-header {
+  width: 100%;
+}
+
+.video-header video {
+  width: 100%;
+  max-width: 100%;
+}
+
 .admin-bar .fl-main-carousel {
   max-height: 95vh;
 }
