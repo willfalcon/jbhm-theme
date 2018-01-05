@@ -1,6 +1,6 @@
 <?php
 
-  if ( get_field( 'video' ) ) {
+  if ( get_field( 'video' ) && ! wp_is_mobile() ) {
     get_header( 'video' );
   } elseif ( get_field( 'header_img' ) ) {
     get_header( 'header_img' );
