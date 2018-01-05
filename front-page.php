@@ -1,11 +1,12 @@
 <?php
 
-  // if ( get_field( 'header_img' ) ) {
-  //   get_header( 'header_img' );
-  // } else {
-  //   get_header();
-  // }
-  get_header( 'video' );
+  if ( get_field( 'video' ) ) {
+    get_header( 'video' );
+  } elseif ( get_field( 'header_img' ) ) {
+    get_header( 'header_img' );
+  } else {
+    get_header();
+  }
 ?>
 
   <div class="row mb-3">
