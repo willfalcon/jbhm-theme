@@ -16,13 +16,13 @@
   <body <?php body_class(); ?>>
 
     <?php
-      $gallery = get_field( 'gallery' );
-      $sliders = array();
-      foreach ( $gallery as $image ) {
-        if ( get_field( 'slider', $image['ID'] ) ) {
-          array_push( $sliders, $image );
-        }
-      }
+      // $gallery = get_field( 'gallery' );
+      // $sliders = array();
+      // foreach ( $gallery as $image ) {
+      //   if ( get_field( 'slider', $image['ID'] ) ) {
+      //     array_push( $sliders, $image );
+      //   }
+      // }
     ?>
 
     <div class="cd-slider-nav">
@@ -62,20 +62,19 @@
       <?php get_template_part( 'breadcrumbs' ); ?>
     </div><!-- .cd-slider-nav -->
 
-    <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel">
+    <?php
+      $video = get_field( 'video' );
+      $poster = get_field( 'poster' );
+    ?>
 
-
-      <div class="fl-main-carousel">
-        <?php foreach ( $sliders as $image ) : ?>
-          <div class="fl-carousel-cell">
-            <img class="img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
-          </div>
-        <?php endforeach; ?>
+      <div class="video-header">
+        <video width="100%" autoplay loop muted poster="<?php echo $poster['url']; ?>">
+          <source src="<?php echo $video['url']; ?>" type="<?php echo $video['mime_type']; ?>">
+        </video>
       </div>
 
 
 
-    </div><!-- .carousel -->
 
 
     <div class="container-fluid">

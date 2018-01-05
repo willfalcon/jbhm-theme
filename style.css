@@ -285,7 +285,8 @@ body {
 }
 
 
-.fl-main-carousel {
+.fl-main-carousel,
+.video-header {
   max-height: 100vh;
 }
 
