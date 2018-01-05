@@ -1,7 +1,7 @@
 <?php
   if ( get_field( 'header_img' ) ) {
     $headerImg = get_field( 'header_img' );
-    $headerImg = $headerImg['url'];
+    $headerImg = $headerImg['sizes']['large'];
     $headerHeight = get_field( 'header_height' );
     $headerHeightCss = 'height: ' . $headerHeight . 'px;';
   } else {
@@ -26,6 +26,8 @@
 <html lang="en">
   <head>
 
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,6 +48,7 @@
           <?php echo $headerHeightCss; ?>
         <?php endif; ?>
         background-position: center;
+        max-height: 100vh;
       }
       nav.cd-nav {
         background-color: rgba(55, 55, 55, .6);

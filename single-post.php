@@ -1,9 +1,25 @@
-<?php get_header(); ?>
+<?php
 
-<?php if ( have_posts() ) : ?>
-  <?php $images = get_field( 'images' ); ?>
+  get_header();
 
-  <?php if ( $images ) : ?>
+  if ( have_posts() ) :
+
+    $count = 0;
+
+    if ( ! get_field( 'no_slider' ) ) {
+      $images = get_field( 'images' );
+      $featured_img = $images[0];
+
+      if ( $images ) {
+        foreach ( $images as $image ) {
+          $count++;
+        }
+      }
+    }
+
+  ?>
+
+  <?php if ( $count > 1 ) : ?>
 
     <div id="post-<?php echo $post->ID; ?>-carousel" class="news-carousel carousel slide" data-ride="carousel">
 
@@ -38,10 +54,13 @@
   </div>
 
 
-  <?php endif; ?>
+<?php elseif ( $count == 1) : ?>
 
+  <div class="row">
+    <img class="d-block w-100 img-fluid" src="<?php echo $featured_img['sizes']['large']; ?>" alt="<?php echo $featured_img['alt']; ?>">
+  </div>
 
-
+<?php endif; ?>
   <div <?php post_class(); ?>>
     <div class="row">
       <div class="cd-blog-post-wrap">

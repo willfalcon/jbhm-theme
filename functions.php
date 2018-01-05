@@ -91,3 +91,21 @@
   include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
   acf_add_options_page();
+
+
+function cd_get_minimum_img_size( $image, $min_width ) {
+
+  if ( $image['sizes']['thumbnail-width'] > $min_width ) {
+    $img_size = $image['sizes']['thumbnail'];
+  } elseif ( $image['sizes']['medium-width'] > $min_width ) {
+    $img_size = $image['sizes']['medium'];
+  } elseif ( $image['sizes']['large-width'] > $min_width ) {
+    $img_size = $image['sizes']['large'];
+  } else {
+    $img_size = $image['url'];
+  }
+
+
+  return $img_size;
+
+}

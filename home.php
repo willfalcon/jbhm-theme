@@ -9,11 +9,15 @@
 
       <div class="col-12 col-md-6 cd-blog-card">
 
-        <?php $img = get_field( 'featured_image' ); ?>
+        <?php
+          $images = get_field( 'images' );
+          $featured_img = $images[0];
+        ?>
 
-        <?php if ( $img ) : ?>
-          <img src="<?php echo $img['sizes']['medium_large']; ?>" alt="<?php echo $img['alt']; ?>" class="img-fluid"/>
+        <?php if ( $featured_img ) : ?>
+          <img src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>" class="img-fluid"/>
         <?php endif; ?>
+
           <div class="cd-blog-desc">
 
             <div class="cd-blog-tails">

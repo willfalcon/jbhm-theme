@@ -7,15 +7,16 @@
   $gallery = get_field( 'gallery' );
 
   if ( $gallery && ! is_ie() ) {
-    $sliders = array();
+    $slider = false;
     foreach ( $gallery as $image ) {
       if ( get_field( 'slider', $image['ID'] ) ) {
-        array_push( $sliders, $image );
+        $slider = true;
+        break;
       }
     }
   }
 
-  if ( ! empty( $sliders ) && ! is_ie() ) {
+  if ( $slider && ! is_ie() ) {
     get_header( 'slider' );
   } elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
     get_header( 'header_img' );

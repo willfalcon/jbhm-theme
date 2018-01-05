@@ -21,26 +21,10 @@
 
         if ( $ratio >= 2 ) {
           $wideImg = true;
-          if ( $image['sizes']['thumbnail-width'] > 710 ) {
-            $imgSrc = $image['sizes']['thumbnail'];
-          } elseif ( $image['sizes']['medium-width'] > 710 ) {
-            $imgSrc = $image['sizes']['medium'];
-          } elseif ( $image['sizes']['large-width'] > 710 ) {
-            $imgSrc = $image['sizes']['large'];
-          } else {
-            $imgSrc = $image['url'];
-          }
+          $imgSrc = cd_get_minimum_img_size( $image, 710 );
         } else {
           $wideImg = false;
-          if ( $image['sizes']['thumbnail-width'] > 350 ) {
-            $imgSrc = $image['sizes']['thumbnail'];
-          } elseif ( $image['sizes']['medium-width'] > 350 ) {
-            $imgSrc = $image['sizes']['medium'];
-          } elseif ( $image['sizes']['large-width'] > 350 ) {
-            $imgSrc = $image['sizes']['large'];
-          } else {
-            $imgSrc = $image['url'];
-          }
+          $imgSrc = cd_get_minimum_img_size( $image, 350 );
         }
 
 

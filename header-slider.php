@@ -32,7 +32,7 @@
         <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
           <?php if ( get_field( 'logo', 'option' ) ) : ?>
             <?php $logo = get_field( 'logo', 'option' ); ?>
-            <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+            <img class="cd-logo" src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>"/>
           <?php else: ?>
             <h1><?php bloginfo( 'title' ); ?></h1>
           <?php endif; ?>
@@ -68,7 +68,7 @@
       <div class="fl-main-carousel">
         <?php foreach ( $sliders as $image ) : ?>
           <div class="fl-carousel-cell">
-            <img class="img-slider" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+            <img class="img-slider" src="<?php echo $image['sizes']['large']; ?>" alt="<?php echo $image['alt']; ?>">
           </div>
         <?php endforeach; ?>
       </div>
