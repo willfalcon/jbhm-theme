@@ -482,6 +482,12 @@ body {
   z-index: 10;
 } */
 
+.search-button {
+  background-color: transparent;
+  border-width: 0px;
+  color: #6BA443;
+}
+
 #main_menu > .fa.fa-search {
   /* z-index: 199;
   position: relative; */
