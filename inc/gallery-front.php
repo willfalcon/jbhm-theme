@@ -2,6 +2,7 @@
 
   <?php
 
+    $projects = get_field( 'project_gallery' );
     $args = array(
       'post_type' => 'project',
       'orderby' => 'date',
@@ -12,13 +13,13 @@
 
   ?>
 
-  <?php if ( $projectQuery->have_posts() ) : ?>
+  <?php if ( $projects ) : ?>
 
     <div class="cd-gallery" id="frontPageGallery">
 
       <div class="cd-gallery-sizer"></div>
 
-      <?php while ( $projectQuery-> have_posts() ) : $projectQuery->the_post(); ?>
+      <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
 
         <?php
 
@@ -66,7 +67,7 @@
 
           </a>
 
-        <?php  endif; endwhile;  ?>
+        <?php  endif; endforeach;  ?>
 
   </div>
 
