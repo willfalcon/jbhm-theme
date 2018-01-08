@@ -399,10 +399,12 @@ body {
 }
 
 #menu-main-menu {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
   max-width: 100%;
   float: left;
+  width: 100%;
 }
 
 .cd-menu {
@@ -423,6 +425,7 @@ body {
   .navbar-expand-md .navbar-collapse {
     display: block;
     display: -ms-flexbox!important;
+    display: -webkit-box!important;
     display: flex!important;
   }
 }
