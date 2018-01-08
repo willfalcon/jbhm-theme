@@ -15,7 +15,7 @@
 
   <body <?php body_class(); ?>>
 
-        <nav class="navbar navbar-expand-md cd-nav" id="cd_header">
+        <nav class="default-header navbar navbar-expand-md cd-nav" id="cd_header">
 
 
           <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
