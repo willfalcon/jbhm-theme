@@ -478,6 +478,9 @@ body {
 
 /*------------ Search ------------*/
 
+#main_menu > .fa.fa-search {
+  z-index: 99;
+}
 
 #searchForm {
   margin-top: 30vh;
