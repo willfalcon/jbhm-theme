@@ -478,13 +478,13 @@ body {
 
 /*------------ Search ------------*/
 
-#main_menu {
+/* #main_menu {
   z-index: 10;
 }
 #main_menu > .fa.fa-search {
   z-index: 199;
   position: relative;
-}
+} */
 
 #searchForm {
   margin-top: 30vh;
