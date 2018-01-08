@@ -480,11 +480,13 @@ body {
 
 /* #main_menu {
   z-index: 10;
-}
-#main_menu > .fa.fa-search {
-  z-index: 199;
-  position: relative;
 } */
+
+#main_menu > .fa.fa-search {
+  /* z-index: 199;
+  position: relative; */
+  touch-action: manipulation;
+}
 
 #searchForm {
   margin-top: 30vh;
