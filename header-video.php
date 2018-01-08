@@ -53,7 +53,9 @@
             wp_nav_menu( $args );
           ?>
 
-           <i class="fa fa-search fa-2x ml-2 accent" data-toggle="modal" data-target="#searchForm"></i>
+          <button class="search-button" data-toggle="modal" data-target="#searchForm">
+             <i class="fa fa-search fa-2x ml-2 accent"></i>
+           </button>
 
         </div>
 
