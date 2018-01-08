@@ -478,8 +478,12 @@ body {
 
 /*------------ Search ------------*/
 
+#main_menu {
+  z-index: 10;
+}
 #main_menu > .fa.fa-search {
-  z-index: 99;
+  z-index: 199;
+  position: relative;
 }
 
 #searchForm {
