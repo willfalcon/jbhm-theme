@@ -3,14 +3,7 @@
   <?php
 
     $projects = get_field( 'project_gallery' );
-    $args = array(
-      'post_type' => 'project',
-      'orderby' => 'date',
-      'posts_per_page' => 20,
-    );
-
-    $projectQuery = new WP_Query( $args );
-
+  
   ?>
 
   <?php if ( $projects ) : ?>
