@@ -15,6 +15,7 @@
 
 <div <?php post_class(); ?>>
   <div class="row mt-2">
+    <!-- This is the one -->
 
         <?php foreach ( $query->get_terms() as $term ) : ?>
 
@@ -27,16 +28,17 @@
               <img src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>"/>
             </div>
 
-                  <div class="cd-grid-content d-none d-md-flex">
-                    <h3><?php echo $term->name; ?></h3>
-                    <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-                  </div>
+            <div class="cd-grid-content d-none d-md-flex">
+              <h3><?php echo $term->name; ?></h3>
+              <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+            </div>
 
-                <div class="cd-grid-mobile-content d-flex d-md-none">
-                  <h3><?php echo $term->name; ?></h3>
-                  <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-                </div>
-            </a>
+            <div class="cd-grid-mobile-content d-flex d-md-none">
+              <h3><?php echo $term->name; ?></h3>
+              <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+            </div>
+            
+          </a>
 
 
         <?php endforeach; ?>

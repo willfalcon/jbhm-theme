@@ -23,28 +23,26 @@
       }
   }
 
-  $query = array();
-
   if ( ! empty( $filter ) ) {
 
     $query = new WP_Query( array(
       'post_type' => 'person',
-      'order' => 'ASC',
-      'category_name' => $filter,
       'posts_per_page' => -1,
-      'order_by' => 'meta_value',
-      'meta_key' => 'order'
-    ) );
+      'category_name' => $filter,
+      'meta_key' => 'order',
+      'orderby' => 'meta_value_num',
+      'order' => 'ASC'
+    ));
 
   } else {
 
     $query = new WP_Query( array(
       'post_type' => 'person',
-      'order' => 'ASC',
       'posts_per_page' => -1,
-      'order_by' => 'meta_value',
-      'meta_key' => 'order'
-    ) );
+      'meta_key' => 'order',
+      'orderby' => 'meta_value_num',
+      'order' => 'ASC'
+    ));
   }
 
 ?>
@@ -66,37 +64,27 @@
 </div>
 
 
-    <div class="row cd-people-grid">
+<div class="row cd-people-grid">
 
+  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
-        <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
+    <?php $headshot = get_field( 'headshot' ); ?>
 
-          <?php $headshot = get_field( 'headshot' ); ?>
+    <a class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3" href="<?php the_permalink(); ?>">
 
-          <a class="cd-grid-item col-12 col-sm-6 col-md-4 col-xl-3" href="<?php the_permalink(); ?>">
+      <div class="img">
+        <img class="img-fluid" src="<?php echo $headshot['sizes']['thumbnail']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
+      </div>
 
-            <div class="img">
-              <img class="img-fluid" src="<?php echo $headshot['sizes']['thumbnail']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
-            </div>
+      <div class="cd-grid-content-person h-size-adjust">
+        <h3><?php the_title(); ?></h3>
+        <hr class="accent">
+        <h4><?php the_field( 'position' ); ?></h4>
+      </div>
 
+    </a>
 
-            <div class="cd-grid-content-person h-size-adjust">
-              <h3><?php the_title(); ?></h3>
-              <hr class="accent">
-              <h4><?php the_field( 'position' ); ?></h4>
-            </div>
-
-
-          </a>
-
-
-        <?php endwhile; else: wp_reset_postdata(); ?>
-
-
-
-    <h3 class="mb-4">Sorry, nothing here!</h3>
-
-  <?php endif; ?>
+  <?php endwhile; endif;  wp_reset_postdata(); ?>
 
 </div>
 
