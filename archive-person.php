@@ -31,7 +31,9 @@
       'post_type' => 'person',
       'order' => 'ASC',
       'category_name' => $filter,
-      'posts_per_page' => -1
+      'posts_per_page' => -1,
+      'order_by' => 'meta_value',
+      'meta_key' => 'order'
     ) );
 
   } else {
@@ -39,7 +41,9 @@
     $query = new WP_Query( array(
       'post_type' => 'person',
       'order' => 'ASC',
-      'posts_per_page' => -1
+      'posts_per_page' => -1,
+      'order_by' => 'meta_value',
+      'meta_key' => 'order'
     ) );
   }
 
