@@ -89,7 +89,12 @@
 
   include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
-  acf_add_options_page();
+  acf_add_options_page(
+    array(
+      'page_title' => 'Site Options',
+      'position' => 5.5
+    )
+  );
 
 
 function cd_get_minimum_img_size( $image, $min_width ) {
