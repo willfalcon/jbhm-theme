@@ -439,6 +439,27 @@ body {
   display: inline-block;
 }
 
+.menu-item-has-children {
+  position: relative;
+}
+
+.menu-item-has-children .sub-menu {
+  display: none;
+  position: absolute;
+  /* right: 50%; */
+
+  padding: 0;
+  background-color: rgba(55, 55, 55, .6);
+}
+
+.menu-item-has-children .sub-menu li {
+  font-size: .8em;
+}
+
+.menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
 
 /*.cd-nav li {
   margin-left: .5rem;

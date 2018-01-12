@@ -39,8 +39,7 @@
   function register_theme_menus() {
     register_nav_menus(
       array(
-        'header-menu' => 'Header Menu',
-        'quick-links' => 'Quick Links'
+        'header-menu' => 'Header Menu'
       )
     );
   }
