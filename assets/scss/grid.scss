@@ -47,6 +47,12 @@
     opacity: 1;
   }
 
+  .cd-grid-content {
+    @media (min-width: 768px) and (max-width: 992px) {
+      opacity: 1;
+    }
+  }
+
 }
 
 .tax-grid-item {

@@ -491,7 +491,8 @@ body {
 #main_menu > .fa.fa-search {
   /* z-index: 199;
   position: relative; */
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
 }
 
 #searchForm {
@@ -673,7 +674,9 @@ body {
 
 .project-main,
 .project-sidebar {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   max-width: 100%;
 }
 

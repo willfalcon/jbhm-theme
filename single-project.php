@@ -33,7 +33,10 @@
 
     <div class="row mt-5">
       <div class="col">
-        <?php the_title( '<h2 class="project-title">', '</h2>' );  ?>
+        <h2 class="project-title"><?php the_title();  ?></h2>
+        <?php if ( get_field( 'location' ) ) : ?>
+          <h3><?php the_field( 'location' ); ?></h3>
+        <?php endif; ?>
       </div>
     </div>
 

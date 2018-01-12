@@ -45,6 +45,9 @@
             transform: scale(1.1); }
   .cd-grid-item:hover .cd-grid-content {
     opacity: 1; }
+  @media (min-width: 768px) and (max-width: 992px) {
+    .cd-grid-item .cd-grid-content {
+      opacity: 1; } }
 
 @media screen and (min-width: 768px) {
   .tax-grid-item {
