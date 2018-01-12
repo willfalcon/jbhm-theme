@@ -671,6 +671,12 @@ body {
   margin-right: auto;
 }
 
+.project-main,
+.project-sidebar {
+  flex-grow: 1;
+  max-width: 100%;
+}
+
 .project-title {
   text-transform: uppercase;
 }

@@ -40,18 +40,18 @@
     <div class="row mt-3">
 
       <?php if ( get_the_content() ) : ?>
-        <div class="col-md-9">
+        <main class="col-md-9 project-main">
           <h4 class="accent mb-3">Project Description</h3>
           <div class="project-description">
             <?php the_content(); ?>
           </div>
-        </div>
+        </main>
       <?php endif; ?>
 
       <?php $startTails = false; ?>
       <?php if ( have_rows( 'recognition' ) ) : ?>
 
-        <div class="col-md-3">
+        <aside class="col-md-3 project-sidebar">
           <div class="project-details">
 
             <h5>Recognition</h5>
@@ -64,7 +64,7 @@
 
       <?php if ( get_field( 'square_ft' ) ) : ?>
         <?php if ( ! $startTails ) : ?>
-          <div class="col-md-3">
+          <aside class="col-md-3 project-sidebar">
             <div class="project-details">
         <?php $startTails = true; endif; ?>
         <h5>Square Feet</h5>
@@ -73,7 +73,7 @@
 
       <?php if ( get_field( 'completed' ) ) : ?>
         <?php if ( ! $startTails ) : ?>
-          <div class="col-md-3">
+          <aside class="col-md-3 project-sidebar">
             <div class="project-details">
         <?php $startTails = true; endif; ?>
         <h5>Completed</h5>
@@ -82,7 +82,7 @@
 
       <?php if ( $startTails ) : ?>
           </div>
-        </div>
+        </aside>
       <?php endif; ?>
 
 
