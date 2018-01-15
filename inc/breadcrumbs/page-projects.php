@@ -9,7 +9,7 @@
   <div class="cd-breadcrumb-top">
 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Industries</li>
+      <li class="breadcrumb-item active" aria-current="page">Projects</li>
     </ol>
 
     <img class="d-none d-md-block" id="breadcrumb_toggle" src="<?php echo get_template_directory_uri(); ?>/assets/arrow.svg"/>
