@@ -91,7 +91,7 @@
   acf_add_options_page(
     array(
       'page_title' => 'Site Options',
-      'position' => 5.5
+      'position' => 3
     )
   );
 
