@@ -3,7 +3,7 @@
   <?php
 
     $projects = get_field( 'project_gallery' );
-  
+
   ?>
 
   <?php if ( $projects ) : ?>
@@ -47,14 +47,14 @@
 
             <div class="frontpage-project-info">
 
-              <div class="text-left w-auto h-size-adjust">
+              <div class="text-left w-75 h-size-adjust">
                 <h3><?php the_title(); ?></h3>
                 <hr class="accent">
-                <h4><?php the_field( 'location' ); ?></h4>
+                <h4 class="location"><?php the_field( 'location' ); ?></h4>
               </div>
-              <div class="text-right w-100 d-none d-md-block">
+              <!-- <div class="text-right d-none d-md-block"> -->
                 <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-              </div>
+              <!-- </div> -->
 
             </div>
 
