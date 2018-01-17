@@ -28,7 +28,7 @@
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-            <i class="fa fa-bars fa-2x"></i>
+            <i id="cd_toggle" class="fa fa-bars"></i>
           </button>
 
           <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
@@ -52,6 +52,6 @@
 
         </nav>
 
-        <?php get_template_part( 'breadcrumbs' ); ?>
+        <!-- <?php// get_template_part( 'breadcrumbs' ); ?> -->
 
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-top: 130px;">

@@ -63,19 +63,19 @@
 
       <div class="header-img">
 
-        <nav class="navbar navbar-expand-md cd-nav" id="cd_header_img">
+        <nav class="navbar navbar-expand-md cd-nav" id="cd_header">
 
           <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
             <?php if ( get_field( 'logo', 'option' ) ) : ?>
               <?php $logo = get_field( 'logo', 'option' ); ?>
-              <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+              <img id="cd_logo" class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
             <?php else: ?>
               <h1><?php bloginfo( 'title' ); ?></h1>
             <?php endif; ?>
           </a>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-            <i class="fa fa-bars fa-2x"></i>
+            <i id="cd_toggle" class="fa fa-bars cd-nav-toggle"></i>
           </button>
 
           <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
@@ -96,7 +96,7 @@
           </div>
         </nav>
 
-        <?php get_template_part( 'breadcrumbs' ); ?>
+        <!-- <?php //get_template_part( 'breadcrumbs' ); ?> -->
 
       </div><!-- .header-img -->
 

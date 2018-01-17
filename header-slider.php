@@ -27,19 +27,19 @@
 
     <div class="cd-slider-nav">
 
-      <nav class="navbar navbar-expand-md cd-nav" id="cd_header_slider">
+      <nav class="navbar navbar-expand-md cd-nav" id="cd_header">
 
         <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
           <?php if ( get_field( 'logo', 'option' ) ) : ?>
             <?php $logo = get_field( 'logo', 'option' ); ?>
-            <img class="cd-logo" src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+            <img id="cd_logo" class="cd-logo" src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>"/>
           <?php else: ?>
             <h1><?php bloginfo( 'title' ); ?></h1>
           <?php endif; ?>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-          <i class="fa fa-bars fa-2x"></i>
+          <i id="cd_toggle" class="fa fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
@@ -61,7 +61,7 @@
 
       </nav>
 
-      <?php get_template_part( 'breadcrumbs' ); ?>
+      <!-- <?php //get_template_part( 'breadcrumbs' ); ?> -->
     </div><!-- .cd-slider-nav -->
 
     <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel">

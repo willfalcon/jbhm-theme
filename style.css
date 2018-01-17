@@ -359,6 +359,7 @@ body {
 .cd-logo {
   height: 15vw;
   max-height: 80px;
+  transition: all .25s ease-in-out;
 }
 @media screen and (min-width: 768px) {
   .cd-logo {
@@ -384,13 +385,35 @@ body {
 .cd-nav {
   background-color: #595959;
   padding-left: 0px;
-  height: 110px;
-  height: initial;
+  //height: 110px;
+  //height: initial;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all .25s;
+  z-index: 15;
 
 }
 
+.cd-nav-toggle {
+    font-size: 2rem;
+}
+
+.cd-mini-nav {
+  /* height: 70px; */
+  background-color: rgba(55, 55, 55, .6);
+}
+
+.cd-mini-nav .cd-logo {
+  height:60px;
+}
+
+.cd-mini-nav #cd_toggle {
+  font-size: 1.5rem;
+}
+
 .flexbox .cd-nav {
-  height: initial;
+  //height: initial;
 }
 
 .cd-nav > a {

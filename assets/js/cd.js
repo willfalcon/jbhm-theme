@@ -112,3 +112,27 @@ function rotateCaret(){
 
 
 }
+
+
+window.onscroll = function() {scrollFunction()};
+
+// Slide down sticky navbar when scrolled past 350px.
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    if (!jQuery("#cd_header").hasClass("cd-mini-nav")) {
+      jQuery("#cd_header").addClass("cd-mini-nav");
+    }
+    // document.getElementById("cd_logo").style.height = "60px";
+    // document.getElementById("cd_toggle").style.fontSize = "1.5rem";
+    if (jQuery("#cd_header").hasClass("navbar-expand-md")) {
+      jQuery("#cd_header").removeClass("navbar-expand-md");
+    }
+  } else {
+    if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
+      jQuery("#cd_header").removeClass("cd-mini-nav");
+    }
+    if (! jQuery("#cd_header").hasClass("navbar-expand-md")) {
+      jQuery("#cd_header").addClass("navbar-expand-md");
+    }
+  }
+}
