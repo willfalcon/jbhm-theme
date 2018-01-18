@@ -43,6 +43,8 @@
 
           <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>">
 
+            <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+
             <img class="img-fluid" src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
             <div class="frontpage-project-info">
@@ -53,10 +55,10 @@
                 <h4 class="location"><?php the_field( 'location' ); ?></h4>
               </div>
               <!-- <div class="text-right d-none d-md-block"> -->
-                <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
               <!-- </div> -->
 
             </div>
+
 
           </a>
 
