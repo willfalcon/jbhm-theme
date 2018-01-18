@@ -7,7 +7,7 @@
   .cd-grid-item {
     &:hover {
       .cd-grid-content-person {
-        opacity: 1;
+        
       }
       img {
         transform: scale(1.05);
@@ -18,14 +18,22 @@
 
 .cd-grid-content-person {
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  background-color: rgba(89, 89, 89, .75);
+  height: 33%;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  // opacity: 0;
+
+
+  h3, h4 {
+    color: #fff;
+  }
 
   width: calc(100% - 10px);
   max-width: 100%;
   padding: .5rem .25rem;
-  transition: opacity .75s;
+  transition: all .5s;
 
 
   hr {
@@ -34,20 +42,10 @@
 
   h3, h4 {
    margin: 0;
-   color: #000;
   }
 
   @media screen and (min-width: 768px) {
-    background-color: rgba(89, 89, 89, .75);
-    height: 33%;
-    position: absolute;
-    bottom: 5px;
-    left: 5px;
-    opacity: 0;
 
-    h3, h4 {
-      color: #fff;
-    }
   }
 
 }
