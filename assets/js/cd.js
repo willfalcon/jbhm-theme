@@ -74,7 +74,22 @@ jQuery(document).ready(function($) {
    wrapAround: true
  });
 
+
+// var searchForm = document.getElementById("searchForm");
+ var formWidth = '311px';
+ console.log(formWidth);
+ //$("#main_menu").css("transform", "translateX(" + formWidth + ")");
+
+ var searchButton = document.getElementById("searchButton");
+ searchButton.addEventListener("mouseover", function(){
+   $("#main_menu").css("transform", "translateX(" + 0 + ")");
+ });
+
+ searchButton.addEventListener("click", function() {
+   $("#main_menu").css("transform", "translateX(" + formWidth + ")");
+ });
 }); //document.ready
+
 
 // document.getElementById('learn_more_link').on
 
