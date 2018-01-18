@@ -51,7 +51,7 @@
       padding: .75rem .75rem;
       /*padding-bottom: .5rem;*/
       // opacity: 0;
-      transition: all .75s;
+      transition: all .5s;
       text-align: left;
 
       h3, h4, h5, p {
@@ -76,7 +76,7 @@
       transition: transform .75s;
     }
     &:hover img {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
 
 

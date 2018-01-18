@@ -33,7 +33,7 @@
     color: white;
     padding: .75rem .75rem;
     /*padding-bottom: .5rem;*/
-    transition: all .75s;
+    transition: all .5s;
     text-align: left; }
     .frontpage-gallery-item .frontpage-project-info h3, .frontpage-gallery-item .frontpage-project-info h4, .frontpage-gallery-item .frontpage-project-info h5, .frontpage-gallery-item .frontpage-project-info p {
       font-size: 1rem; }
@@ -42,7 +42,7 @@
   .frontpage-gallery-item img {
     transition: transform .75s; }
   .frontpage-gallery-item:hover img {
-    transform: scale(1.2); } }
+    transform: scale(1.1); } }
 
 .h-300 {
   height: 300px; }
