@@ -90,7 +90,8 @@ jQuery(document).ready(function($) {
  searchButton.addEventListener("click", function() {
    $("#menu-main-menu").css("transform", "translateX(" + formWidth + ")");
    $("#searchButton").css("transform", "translateX(" + formWidth + ")");
-   $("#searchForm").css("transform", "translateX(" + formWidth + ")"); });
+   $("#searchForm").css("transform", "translateX(" + formWidth + ")");
+ });
 }); //document.ready
 
 
@@ -134,7 +135,7 @@ function rotateCaret(){
 
 window.onscroll = function() {scrollFunction()};
 
-// Slide down sticky navbar when scrolled past 350px.
+// Minified sticky navbar after scroll past 50px;
 function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     if (!jQuery("#cd_header").hasClass("cd-mini-nav")) {
@@ -145,6 +146,7 @@ function scrollFunction() {
     if (jQuery("#cd_header").hasClass("navbar-expand-md")) {
       jQuery("#cd_header").removeClass("navbar-expand-md");
     }
+    jQuery("#menu-main-menu").css("transform", "translateX(" + 0 + ")");
   } else {
     if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
       jQuery("#cd_header").removeClass("cd-mini-nav");
@@ -155,5 +157,11 @@ function scrollFunction() {
     if (jQuery("#main_menu").hasClass("show")) {
       jQuery("#main_menu").removeClass("show");
     }
+
+    jQuery("#menu-main-menu").css("transform", "translateX(311px)");
+    jQuery("#searchButton").css("transform", "translateX(311px)");
+    jQuery("#searchForm").css("transform", "translateX(311px)"); 
+
+
   }
 }
