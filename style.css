@@ -311,6 +311,7 @@ body {
 .cd-mini-nav {
   /* height: 70px; */
   background-color: rgba(55, 55, 55, .6);
+  z-index: 10;
 }
 
 .cd-mini-nav .cd-logo {
@@ -443,6 +444,10 @@ body {
   cursor: pointer;
 }
 
+.cd-mini-nav .search-button {
+  display: none;
+}
+
 .search-button:focus {
   outline: none;
 }
@@ -455,15 +460,24 @@ body {
 }
 
 @media (min-width: 768px) {
-  #main_menu {
+  #menu-main-menu,
+  #searchButton,
+  #searchForm {
     transform: translateX(311px);
     transition: all .25s;
+  }
+  .cd-mini-nav #menu_main_menu {
+    transform: translateX(0);
   }
 }
 
 .search-form {
   flex-wrap: nowrap;
   margin-left: 1rem;
+}
+
+.cd-mini-nav .search-form {
+  display: none;
 }
 
 .search-submit {

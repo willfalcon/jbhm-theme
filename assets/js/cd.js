@@ -82,12 +82,15 @@ jQuery(document).ready(function($) {
 
  var searchButton = document.getElementById("searchButton");
  searchButton.addEventListener("mouseover", function(){
-   $("#main_menu").css("transform", "translateX(" + 0 + ")");
+   $("#menu-main-menu").css("transform", "translateX(" + 0 + ")");
+   $("#searchButton").css("transform", "translateX(" + 0 + ")");
+   $("#searchForm").css("transform", "translateX(" + 0 + ")");
  });
 
  searchButton.addEventListener("click", function() {
-   $("#main_menu").css("transform", "translateX(" + formWidth + ")");
- });
+   $("#menu-main-menu").css("transform", "translateX(" + formWidth + ")");
+   $("#searchButton").css("transform", "translateX(" + formWidth + ")");
+   $("#searchForm").css("transform", "translateX(" + formWidth + ")"); });
 }); //document.ready
 
 
@@ -148,6 +151,9 @@ function scrollFunction() {
     }
     if (! jQuery("#cd_header").hasClass("navbar-expand-md")) {
       jQuery("#cd_header").addClass("navbar-expand-md");
+    }
+    if (jQuery("#main_menu").hasClass("show")) {
+      jQuery("#main_menu").removeClass("show");
     }
   }
 }
