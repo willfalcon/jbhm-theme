@@ -286,9 +286,6 @@ body {
     z-index: 1;
     width: 100%;
   }
-  .admin-bar .cd-slider-nav {
-
-  }
 }
 
 .cd-nav {
@@ -301,7 +298,10 @@ body {
   width: 100%;
   transition: all .25s;
   z-index: 15;
+}
 
+.admin-bar .cd-nav {
+  top: 30px;
 }
 
 .cd-nav-toggle {
