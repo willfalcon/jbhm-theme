@@ -24,14 +24,13 @@
     wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/dist/js/lightbox.min.js', array( 'jquery' ), false, true);
     wp_enqueue_script( 'flickity_js', get_template_directory_uri() . '/assets/flickity/flickity.pkgd.min.js', array( 'jquery' ), false );
     wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr-custom.js' );
-
-
-
   }
 
 /* Add Theme Supports */
 
   add_theme_support( 'menus' );
+
+  /* TODO: Consider removing widget support */
   add_theme_support( 'widgets' );
 
 /* Create Menu Locations */
@@ -45,17 +44,18 @@
   }
   add_action( 'init', 'register_theme_menus' );
 
-/* Add .nav-item to li elements in navbar */
-
   add_filter('nav_menu_css_class' , 'cd_nav_item' , 10 , 2);
 
-  function cd_nav_item($classes, $item){
+  function cd_nav_item( $classes, $item ) {
+    /* Add .nav-item to li elements in navbar */
+
       $classes[] = 'nav-item';
       return $classes;
   }
 
-/* Setup widget location */
 
+/* Setup widget location */
+  /* TODO: Widget location is not currently being used, consider removing unless that changes */
   cd_create_widget( 'Footer Left', 'footer-left', 'Displays in the far left of the footer.' );
 
   function cd_create_widget( $name, $id, $description ) {
@@ -97,7 +97,7 @@
 
 
 function cd_get_minimum_img_size( $image, $min_width ) {
-
+  // TODO: check to make sure this is being used somewhere */
   if ( $image['sizes']['thumbnail-width'] > $min_width ) {
     $img_size = $image['sizes']['thumbnail'];
   } elseif ( $image['sizes']['medium-width'] > $min_width ) {
