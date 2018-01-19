@@ -42,9 +42,16 @@
               wp_nav_menu( $args );
             ?>
 
-            <button class="search-button" data-toggle="modal" data-target="#searchForm">
-               <i class="fa fa-search fa-2x ml-2 accent"></i>
-             </button>
+            <button class="search-button" id="searchButton">
+              <i class="fa fa-search fa-2x ml-2 accent"></i>
+            </button>
+
+            <form class="form-inline search-form" id="searchForm" method="GET" action="<?php echo home_url(); ?>">
+              <input class="form-control" type="search" aria-label="Search" name="s">
+              <button class="btn search-submit" type="submit">
+                Search
+              </button>
+            </form>
 
           </div>
 
