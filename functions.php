@@ -13,6 +13,7 @@
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'cd_grid', get_template_directory_uri() . '/assets/css/grid.css' );
+    wp_enqueue_style( 'how-to_styles', get_template_directory_uri() . '/assets/css/how-to.css' );
   }
 
   function cd_theme_scripts() {
@@ -111,4 +112,17 @@ function cd_get_minimum_img_size( $image, $min_width ) {
 
   return $img_size;
 
+}
+
+
+add_action( 'admin_bar_menu', 'toolbar_add_menu_items', 999 );
+
+function toolbar_add_menu_items( $wp_admin_bar ) {
+	$args = array(
+		'id'    => 'how_to_page',
+		'title' => 'How do I...?',
+		'href'  => home_url() . '/admin/home-page',
+		'meta'  => array( 'class' => 'how-to-page' )
+	);
+	$wp_admin_bar->add_node( $args );
 }

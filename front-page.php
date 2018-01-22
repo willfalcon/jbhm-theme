@@ -39,4 +39,13 @@
 
   <?php get_template_part( 'inc/gallery', 'front' ); ?>
 
+  <?php
+
+    $user = wp_get_current_user();
+    if ( $user->ID != 0 ) {
+      get_template_part('inc/how-to/base');
+    }
+
+  ?>
+
 <?php get_footer(); ?>
