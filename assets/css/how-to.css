@@ -1,0 +1,12 @@
+.logged-in .cd-slider-nav,
+.logged-in .header-img,
+.logged-in .container-fluid {
+  position: relative;
+  right: 0;
+  transition: all .25s; }
+  .logged-in .cd-slider-nav.slide-over,
+  .logged-in .header-img.slide-over,
+  .logged-in .container-fluid.slide-over {
+    right: 50%; }
+
+/*# sourceMappingURL=how-to.css.map */
