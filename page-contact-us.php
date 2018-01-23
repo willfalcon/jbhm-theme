@@ -27,9 +27,17 @@
               <div class="office">
                 <h2><?php the_sub_field( 'title' ); ?></h2>
                 <img class="img-fluid w-100" src="<?php echo $img['sizes']['large']; ?>" alt=<?php echo $img['alt']; ?> />
-                <p><?php the_sub_field( 'address' ); ?></p>
-                <p><?php the_sub_field( 'city' ); ?>, <?php the_sub_field( 'state' ); ?> <?php the_sub_field( 'zip' ); ?></p>
-                <p><?php the_sub_field( 'phone' ); ?></p>
+                <p>
+                  <?php the_sub_field( 'address' ); ?>
+                </p>
+                <p>
+                  <?php the_sub_field( 'city' ); ?>, <?php the_sub_field( 'state' ); ?> <?php the_sub_field( 'zip' ); ?>
+                </p>
+                <p>
+                  <a href="tel:<?php the_sub_field( 'phone' ); ?>">
+                    <?php the_sub_field( 'phone' ); ?>
+                  </a>
+                </p>
               </div>
 
             <?php endwhile; ?>
