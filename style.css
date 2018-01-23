@@ -26,6 +26,7 @@ This theme, like WordPress, is licensed under the GPL.
     -- Breadcrumbs
   -- Front_Page
   -- Page
+  -- Contact_Us_Page
   -- Services
   -- Projects
   -- People
@@ -346,6 +347,7 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   float: right;
+
   /*max-width: 100%;*/
 }
 
@@ -609,6 +611,30 @@ body {
   padding: 0 15px;
 }
 
+/*-----------------------------------------------------*/
+/*---------------   Contact_Us_Page     ---------------*/
+/*-----------------------------------------------------*/
+
+.bid-docs {
+  background-color: rgba(216, 216, 216, .5);
+  padding: 25px 22px;
+  position: sticky;
+  top: 145px;
+  margin-top: 5px;
+}
+
+.bid-docs h3 {
+  margin-bottom: 1rem;
+}
+
+.bid-docs a {
+  width: 100%;
+  display: block;
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+
 /*------------------------------------------------*/
 /*---------------     Services     ---------------*/
 /*------------------------------------------------*/
@@ -862,16 +888,9 @@ span.award-name {
 .cd-footer-col {
     margin-top: 10px;
     margin-bottom: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .cd-footer .widget {
