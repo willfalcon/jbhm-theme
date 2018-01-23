@@ -620,7 +620,22 @@ body {
 /*-----------------------------------------------------*/
 /*---------------   Contact_Us_Page     ---------------*/
 /*-----------------------------------------------------*/
+.office-info {
+  margin-top: 22px;
+  margin-bottom: 50px;
+}
+.office-info p {
+  margin: 0;
+}
 
+.office h2 {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.office a {
+  color: #4A4A4A;
+}
 .bid-docs {
   background-color: rgba(216, 216, 216, .5);
   padding: 25px 22px;
