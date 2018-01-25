@@ -26,6 +26,15 @@
     transform: translateY(60px);
     color: black;
 
+    &.no-location {
+      transform: translateY(0);
+      .cd-more {
+        transform: translateY(60px);
+        transition: all .5s;
+
+      }
+    }
+
     text-align: left;
 
     h3, h4, h5, p {
@@ -67,8 +76,10 @@
       // max-height: 100%;
       transform: translateY(0);
 
-      hr.accent, .location {
-        // display: block;
+      &.no-location{
+        .cd-more {
+          transform: translateY(0);
+        }
       }
 
     }

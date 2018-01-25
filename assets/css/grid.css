@@ -17,6 +17,11 @@
   transform: translateY(60px);
   color: black;
   text-align: left; }
+  .frontpage-gallery-item .frontpage-project-info.no-location {
+    transform: translateY(0); }
+    .frontpage-gallery-item .frontpage-project-info.no-location .cd-more {
+      transform: translateY(60px);
+      transition: all .5s; }
   .frontpage-gallery-item .frontpage-project-info h3, .frontpage-gallery-item .frontpage-project-info h4, .frontpage-gallery-item .frontpage-project-info h5, .frontpage-gallery-item .frontpage-project-info p {
     font-size: .778rem; }
 @media screen and (min-width: 768px) {
@@ -39,6 +44,8 @@
       font-size: 1rem; }
   .frontpage-gallery-item:hover .frontpage-project-info {
     transform: translateY(0); }
+    .frontpage-gallery-item:hover .frontpage-project-info.no-location .cd-more {
+      transform: translateY(0); }
   .frontpage-gallery-item img {
     transition: transform .75s; }
   .frontpage-gallery-item:hover img {

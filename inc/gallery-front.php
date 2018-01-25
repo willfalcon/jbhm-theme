@@ -25,6 +25,9 @@
             $img = $gallery[0];
           }
 
+
+          $location = ( get_field( 'location' ) ? get_field( 'location' ) : false );
+
           if ( ! empty($img) ) :
             $width = $img['width'];
             $height = $img['height'];
@@ -43,19 +46,22 @@
 
           <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>">
 
-            <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
 
             <img class="img-fluid" src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
-            <div class="frontpage-project-info">
+            <div class="frontpage-project-info<?php if ( ! $location ) : ?> no-location<?php endif; ?>">
 
               <div class="text-left w-75 h-size-adjust">
                 <h3><?php the_title(); ?></h3>
-                <hr class="accent">
-                <h4 class="location"><?php the_field( 'location' ); ?></h4>
+                <?php if ( $location ) : ?>
+                  <hr class="accent">
+                  <h4 class="location"><?php the_field( 'location' ); ?></h4>
+                <?php endif; ?>
               </div>
-              <!-- <div class="text-right d-none d-md-block"> -->
-              <!-- </div> -->
+
+              <div class="text-right d-none d-md-block">
+                <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+              </div>
 
             </div>
 

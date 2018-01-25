@@ -67,6 +67,8 @@
           $height = $img['height'];
           $ratio = $width / $height;
 
+          $location = ( get_field( 'location' ) ? get_field( 'location' ) : false );
+
           /*<?php if ( $ratio > 1.8 ) : ?> cd-gallery-wide<?php endif;?>*/
 
         ?>
@@ -75,15 +77,15 @@
 
             <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
 
-            <div class="frontpage-project-info">
+            <div class="frontpage-project-info<?php if ( ! $location ) : ?> no-location<?php endif; ?>">
 
-              <div class="text-left w-auto h-size-adjust">
+              <div class="text-left w-75 h-size-adjust">
                 <h4><?php the_title(); ?></h4>
                 <hr class="accent">
                 <h5><?php the_field( 'location' ); ?></h5>
               </div>
-              <div class="text-right w-100 d-none d-md-block">
-                <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
+              <div class="text-right d-none d-md-block">
+                <p class="cd-more mb-0">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
               </div>
 
             </div>
@@ -96,11 +98,8 @@
   </div>
 
 
-<?php else: wp_reset_postdata(); ?>
+<?php endif; wp_reset_postdata(); ?>
 
-  <h3 class="mb-4">Nothing was found!</h3>
-
-<?php endif; ?>
 
 
 <?php get_footer(); ?>

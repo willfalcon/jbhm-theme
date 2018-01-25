@@ -10,8 +10,14 @@
       <div class="col-12 col-md-6 cd-blog-card">
 
         <?php
-          $images = get_field( 'images' );
-          $featured_img = $images[0];
+          $featured_img = false;
+          if ( get_field( 'header_img' ) ) {
+            $featured_img = get_field( 'header_img' );
+          } elseif ( get_field( 'images' ) ) {
+            $images = get_field( 'images' );
+            $featured_img = $images[0];
+          }
+
         ?>
 
         <?php if ( $featured_img ) : ?>
