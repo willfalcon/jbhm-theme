@@ -95,6 +95,53 @@
     )
   );
 
+  function filter_project_picker_industries( $args, $field, $post_id ) {
+
+	// $post_id comes in here as term_# so we need to remove 'term_' to get the term ID
+	$prefix = 'term_';
+
+	// Also if you are creating a new taxonomy, post_id = 'term_0' so then there's no point in adding a filter
+	if ( 'term_0' != $post_id && substr( $post_id, 0, strlen( $prefix )) == $prefix ) {
+		// Set $term_id to the ID part of $post_id
+		$term_id = substr( $post_id, strlen( $prefix ) );
+
+		// And adjust the query to filter by specific taxonomy term
+		$args['tax_query'] = array(
+			array(
+				'taxonomy'  => 'industries',
+				'field'     => 'term_id',
+				'terms'     => $term_id,
+			),
+		);
+	}
+	return $args;
+}
+function filter_project_picker_services( $args, $field, $post_id ) {
+
+// $post_id comes in here as term_# so we need to remove 'term_' to get the term ID
+$prefix = 'term_';
+
+// Also if you are creating a new taxonomy, post_id = 'term_0' so then there's no point in adding a filter
+if ( 'term_0' != $post_id && substr( $post_id, 0, strlen( $prefix )) == $prefix ) {
+  // Set $term_id to the ID part of $post_id
+  $term_id = substr( $post_id, strlen( $prefix ) );
+
+  // And adjust the query to filter by specific taxonomy term
+  $args['tax_query'] = array(
+    array(
+      'taxonomy'  => 'services',
+      'field'     => 'term_id',
+      'terms'     => $term_id,
+    ),
+  );
+}
+return $args;
+}
+// filter for a specific field based on it's name
+add_filter('acf/fields/post_object/query/name=project_picker_services', 'filter_project_picker_services', 10, 3);
+
+
+
 
 function cd_get_minimum_img_size( $image, $min_width ) {
   // TODO: check to make sure this is being used somewhere */

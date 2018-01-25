@@ -11,19 +11,25 @@
 <?php
   $currentTerm = get_queried_object();
 
-  $args = array(
-    'post_type' => 'project',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'industries',
-        'field' => 'slug',
-        'terms' => $currentTerm->slug
-      )
-    ),
-    'posts_per_page' => -1
-  );
-  $query = new WP_Query( $args );
+  // $args = array(
+  //   'post_type' => 'project',
+  //   'tax_query' => array(
+  //     array(
+  //       'taxonomy' => 'industries',
+  //       'field' => 'slug',
+  //       'terms' => $currentTerm->slug
+  //     )
+  //   ),
+  //   'posts_per_page' => -1
+  // );
+  // $query = new WP_Query( $args );
+
+  $acfID = 'industries_' . $currentTerm->term_id;
+  $projects = get_field( 'projects_picker', $acfID );
+
+
 ?>
+
 
 <div class="row">
   <div class="industry-title-wrap">
@@ -34,13 +40,13 @@
 
 <div class="row">
 
-<?php if ( $query->have_posts() ) : ?>
+<?php if ( $projects ) : ?>
 
   <div class="cd-gallery">
 
     <div class="cd-gallery-sizer"></div>
 
-    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+    <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
 
       <?php
 
@@ -77,7 +83,7 @@
 
       </a>
 
-    <?php endwhile; ?>
+    <?php endforeach; ?>
 
   </div>
 

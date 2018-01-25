@@ -2,7 +2,6 @@
 
 
 //TODO: Use smaller image size for thumbnails
-//TODO: Set to sort by date rather than whatever it is now
 
   get_header();
 
@@ -12,18 +11,21 @@
 <?php
   $currentTerm = get_queried_object();
 
-  $args = array(
-    'post_type' => 'project',
-    'tax_query' => array(
-      array(
-        'taxonomy' => 'services',
-        'field' => 'slug',
-        'terms' => $currentTerm->slug
-      )
-    ),
-    'posts_per_page' => -1
-  );
-  $query = new WP_Query( $args );
+  // $args = array(
+  //   'post_type' => 'project',
+  //   'tax_query' => array(
+  //     array(
+  //       'taxonomy' => 'services',
+  //       'field' => 'slug',
+  //       'terms' => $currentTerm->slug
+  //     )
+  //   ),
+  //   'posts_per_page' => -1
+  // );
+  // $query = new WP_Query( $args );
+  //
+  $acfID = 'services_' . $currentTerm->term_id;
+  $projects = get_field( 'project_picker_services', $acfID );
 
 ?>
 
@@ -40,7 +42,7 @@
 </div>
 
 
-<?php if ( have_posts() ) : ?>
+<?php if ( $projects ) : ?>
 
 
 
@@ -50,7 +52,7 @@
 
       <div class="cd-gallery-sizer"></div>
 
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
 
         <?php
 
@@ -88,7 +90,7 @@
 
           </a>
 
-      <?php endwhile; ?>
+      <?php endforeach; ?>
 
     </div>
   </div>
