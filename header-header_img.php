@@ -93,12 +93,14 @@
               <i class="fa fa-search fa-2x ml-2 accent"></i>
             </button>
 
-            <form class="form-inline search-form" id="searchForm" method="GET" action="<?php echo home_url(); ?>">
-              <input class="form-control" type="search" aria-label="Search" name="s">
-              <button class="btn search-submit" type="submit">
-                Search
-              </button>
-            </form>
+            <div class="search-form">
+              <form class="form-inline search-form" id="searchForm" method="GET" action="<?php echo home_url(); ?>">
+                <input class="form-control" type="search" aria-label="Search" name="s">
+                <button class="btn search-submit" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
 
           </div>
         </nav>

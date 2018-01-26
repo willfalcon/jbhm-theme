@@ -193,6 +193,7 @@ body {
   position: relative;
 }
 .sticky-sidebar div {
+  position: -webkit-sticky;
   position: sticky;
   top: 130px;
 }
@@ -359,10 +360,18 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   float: right;
+  position: absolute;
+  right: -320px;
+  -webkit-transition: all .25s;
+  transition: all .25s;
 
   /*max-width: 100%;*/
 }
 
+.cd-mini-nav .cd-menu {
+  position: relative;
+  right: 0;
+}
 .no-flexbox .cd-menu {
   width: calc(100% - 318px);
 }
@@ -475,14 +484,14 @@ body {
   #menu-main-menu,
   #searchButton,
   #searchForm {
-    -webkit-transform: translateX(311px);
-            transform: translateX(311px);
+
     -webkit-transition: all .25s;
+
     transition: all .25s;
   }
   .cd-mini-nav #menu-main-menu {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    /* -webkit-transform: translateX(0);
+            transform: translateX(0); */
   }
 }
 
@@ -490,6 +499,7 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin-left: 1rem;
+  width: 320px;
 }
 
 .cd-mini-nav .search-form {

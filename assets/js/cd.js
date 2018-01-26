@@ -76,21 +76,21 @@ jQuery(document).ready(function($) {
 
 
 // var searchForm = document.getElementById("searchForm");
- var formWidth = '311px';
+ var formWidth = '-320px';
  console.log(formWidth);
  //$("#main_menu").css("transform", "translateX(" + formWidth + ")");
 
  var searchButton = document.getElementById("searchButton");
  searchButton.addEventListener("mouseover", function(){
-   $("#menu-main-menu").css("transform", "translateX(" + 0 + ")");
-   $("#searchButton").css("transform", "translateX(" + 0 + ")");
-   $("#searchForm").css("transform", "translateX(" + 0 + ")");
+   $("#main_menu").css("transform", "translateX("+ formWidth + ")");
+   // $("#searchButton").css("transform", "translateX(0)");
+   // $("#searchForm").css("transform", "translateX(0)");
  });
 
  searchButton.addEventListener("click", function() {
-   $("#menu-main-menu").css("transform", "translateX(" + formWidth + ")");
-   $("#searchButton").css("transform", "translateX(" + formWidth + ")");
-   $("#searchForm").css("transform", "translateX(" + formWidth + ")");
+   $("#main_menu").css("transform", "translateX(0)");
+   // $("#searchButton").css("transform", "translateX(" + formWidth + ")");
+   // $("#searchForm").css("transform", "translateX(" + formWidth + ")");
  });
 }); //document.ready
 
@@ -146,7 +146,7 @@ function scrollFunction() {
     if (jQuery("#cd_header").hasClass("navbar-expand-md")) {
       jQuery("#cd_header").removeClass("navbar-expand-md");
     }
-    jQuery("#menu-main-menu").css("transform", "translateX(" + 0 + ")");
+    jQuery("#main_menu").css("transform", "translateX(" + formWidth + ")");
   } else {
     if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
       jQuery("#cd_header").removeClass("cd-mini-nav");
@@ -158,9 +158,9 @@ function scrollFunction() {
       jQuery("#main_menu").removeClass("show");
     }
 
-    jQuery("#menu-main-menu").css("transform", "translateX(311px)");
-    jQuery("#searchButton").css("transform", "translateX(311px)");
-    jQuery("#searchForm").css("transform", "translateX(311px)"); 
+    jQuery("#main_menu").css("transform", "translateX(0)");
+    // jQuery("#searchButton").css("transform", "translateX(" + formWidth + ")");
+    // jQuery("#searchForm").css("transform", "translateX(" + formWidth + ")");
 
 
   }
