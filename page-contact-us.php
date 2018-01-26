@@ -22,11 +22,21 @@
 
             <?php while ( have_rows( 'offices' ) ) : the_row( 'offices' ); ?>
 
-              <?php $img = get_sub_field( 'map_image' ); ?>
+              <?php
+                $img = get_sub_field( 'map_image' );
+                $address = get_sub_field( 'address' );
+                $city = get_sub_field( 'city' );
+                $state = get_sub_field( 'state' );
+                $zip = get_sub_field( 'zip_code' );
+              ?>
 
               <div class="office">
                 <h2><?php the_sub_field( 'title' ); ?></h2>
-                <img class="img-fluid w-100" src="<?php echo $img['sizes']['large']; ?>" alt=<?php echo $img['alt']; ?> />
+                <iframe
+                  frameborder="0"
+                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDy5M85G3Ima55nYGas8G4sf5ZDSP6zU9M
+                    &q=<?php echo cd_map_link( $address, $city, $state, $zip ); ?>" allowfullscreen>
+                </iframe>
                 <div class="office-info">
                   <p>
                     <?php the_sub_field( 'address' ); ?>
@@ -50,21 +60,21 @@
 
         <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
-          <div class="col-12 col-md-4">
-            <div class="bid-docs">
+          <aside class="col-md-3 project-sidebar">
+            <div class="project-details">
 
-              <h3>Bid Documents</h3>
+              <h5>Bid Documents</h5>
 
               <?php while ( have_rows( 'bid_documents' ) ) : the_row( 'bid_documents' ); ?>
 
-                <a class="accent" href="<?php the_sub_field( 'link' ); ?>" target="_blank">
+                <a class="accent w-100 d-block" href="<?php the_sub_field( 'link' ); ?>" target="_blank">
                   <?php the_sub_field( 'label' ); ?> <i class="fa fa-chevron-right accent"></i>
                 </a>
 
               <?php endwhile; ?>
 
             </div>
-          </div>
+          </aside>
 
         <?php endif; ?>
 

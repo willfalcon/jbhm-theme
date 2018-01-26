@@ -171,3 +171,26 @@ function cd_get_minimum_img_size( $image, $min_width ) {
   return $img_size;
 
 }
+
+function cd_map_link( $address, $city, $state, $zip ) {
+  /**
+   * Converts a string containing an address into a google maps link.
+   *
+   * @param string $address The address to be converted.
+   * @return string $href new string containing a url specifying the address on a google map.
+   */
+
+
+  $address = (string)$address;
+  $city = (string)$city;
+  $state = (string)$state;
+  $zip = (string)$zip;
+
+  $address = preg_replace('/\s+/', '+', $address);
+  $city = preg_replace('/\s+/', '+', $city);
+  $state = preg_replace('/\s+/', '+', $state);
+  $zip = preg_replace('/\s+/', '+', $zip);
+
+  $href = $address . '+' . $city . '+' . $state . '+' . $zip;
+  return $href;
+}

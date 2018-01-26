@@ -636,6 +636,13 @@ body {
 .office a {
   color: #4A4A4A;
 }
+
+.office iframe {
+  max-width: 100%;
+  width: 500px;
+  height: 300px;
+  height: calc(500px * 3 / 4);
+}
 .bid-docs {
   background-color: rgba(216, 216, 216, .5);
   padding: 25px 22px;
