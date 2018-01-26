@@ -82,13 +82,13 @@ jQuery(document).ready(function($) {
 
  var searchButton = document.getElementById("searchButton");
  searchButton.addEventListener("mouseover", function(){
-   $("#main_menu").css("transform", "translateX("+ formWidth + ")");
+   $("#main_menu").css("right", 0);
    // $("#searchButton").css("transform", "translateX(0)");
    // $("#searchForm").css("transform", "translateX(0)");
  });
 
  searchButton.addEventListener("click", function() {
-   $("#main_menu").css("transform", "translateX(0)");
+   $("#main_menu").css("right", formWidth);
    // $("#searchButton").css("transform", "translateX(" + formWidth + ")");
    // $("#searchForm").css("transform", "translateX(" + formWidth + ")");
  });
@@ -146,7 +146,7 @@ function scrollFunction() {
     if (jQuery("#cd_header").hasClass("navbar-expand-md")) {
       jQuery("#cd_header").removeClass("navbar-expand-md");
     }
-    jQuery("#main_menu").css("transform", "translateX(" + formWidth + ")");
+    jQuery("#main_menu").css("right", 0);
   } else {
     if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
       jQuery("#cd_header").removeClass("cd-mini-nav");
@@ -158,7 +158,7 @@ function scrollFunction() {
       jQuery("#main_menu").removeClass("show");
     }
 
-    jQuery("#main_menu").css("transform", "translateX(0)");
+    jQuery("#main_menu").css("right", formWidth);
     // jQuery("#searchButton").css("transform", "translateX(" + formWidth + ")");
     // jQuery("#searchForm").css("transform", "translateX(" + formWidth + ")");
 

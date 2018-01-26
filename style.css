@@ -499,6 +499,8 @@ body {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin-left: 1rem;
+  margin-right: 1rem;
+
   width: 320px;
 }
 
