@@ -1,15 +1,13 @@
 <?php
 
-
-//TODO: Use smaller image size for thumbnails
-
-  get_header();
-
-?>
-
-
-<?php
   $currentTerm = get_queried_object();
+  $acfID = $currentTerm->taxonomy . '_' . $currentTerm->term_id;
+
+  if ( get_field( 'image', $acfID ) ) {
+    get_header( 'services' );
+  } else {
+    get_header();
+  }
 
   // $args = array(
   //   'post_type' => 'project',
@@ -24,7 +22,6 @@
   // );
   // $query = new WP_Query( $args );
   //
-  $acfID = 'services_' . $currentTerm->term_id;
   $projects = get_field( 'project_picker_services', $acfID );
 
 ?>

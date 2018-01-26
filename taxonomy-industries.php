@@ -1,15 +1,14 @@
 <?php
 
-
-//TODO: Use smaller image size for thumbnails
-
-
-  get_header();
-
-?>
-
-<?php
   $currentTerm = get_queried_object();
+  $acfID = $currentTerm->taxonomy . '_' . $currentTerm->term_id;
+
+  if ( get_field( 'industry_image', $acfID ) ) {
+    get_header( 'industries' );
+  } else {
+    get_header();
+  }
+
 
   // $args = array(
   //   'post_type' => 'project',
@@ -28,6 +27,7 @@
   $projects = get_field( 'projects_picker', $acfID );
 
 ?>
+
 
 <div class="row">
   <div class="industry-title-wrap">
