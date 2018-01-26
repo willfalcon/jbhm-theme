@@ -60,7 +60,7 @@
 
         <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
-          <aside class="col-md-3 project-sidebar">
+          <aside class="col-md-3 project-sidebar sticky-sidebar">
             <div class="project-details">
 
               <h5>Bid Documents</h5>

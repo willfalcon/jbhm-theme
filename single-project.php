@@ -54,7 +54,7 @@
       <?php $startTails = false; ?>
       <?php if ( have_rows( 'recognition' ) ) : ?>
 
-        <aside class="col-md-3 project-sidebar">
+        <aside class="col-md-3 project-sidebar sticky-sidebar">
           <div class="project-details">
 
             <h5>Recognition</h5>
@@ -67,7 +67,7 @@
 
       <?php if ( get_field( 'square_ft' ) ) : ?>
         <?php if ( ! $startTails ) : ?>
-          <aside class="col-md-3 project-sidebar">
+          <aside class="col-md-3 project-sidebar sticky-sidebar">
             <div class="project-details">
         <?php $startTails = true; endif; ?>
         <h5>Square Feet</h5>
@@ -76,7 +76,7 @@
 
       <?php if ( get_field( 'completed' ) ) : ?>
         <?php if ( ! $startTails ) : ?>
-          <aside class="col-md-3 project-sidebar">
+          <aside class="col-md-3 project-sidebar sticky-sidebar">
             <div class="project-details">
         <?php $startTails = true; endif; ?>
         <h5>Completed</h5>
