@@ -44,9 +44,6 @@
 
 <?php if ( $projects ) : ?>
 
-
-
-
   <div class="row">
     <div class="cd-gallery">
 
@@ -75,7 +72,7 @@
 
           <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>?t=s&o=<?php echo $currentTerm->term_id; ?>">
 
-            <img class="img-fluid" src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>"/>
+            <img class="img-fluid" src="<?php echo cd_get_minimum_img_size( $img, 500); ?>" alt="<?php echo $img['alt']; ?>"/>
 
             <div class="frontpage-project-info<?php if ( ! $location ) : ?> no-location<?php endif; ?>">
 
