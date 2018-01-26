@@ -15,66 +15,24 @@
 
   <body <?php body_class(); ?>>
 
-    <?php
-      $gallery = get_field( 'gallery' );
-      $sliders = array();
-      foreach ( $gallery as $image ) {
-        if ( get_field( 'slider', $image['ID'] ) ) {
-          array_push( $sliders, $image );
-        }
-      }
-    ?>
-
     <div class="cd-slider-nav">
 
-      <nav class="navbar navbar-expand-md cd-nav" id="cd_header">
-
-        <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
-          <?php if ( get_field( 'logo', 'option' ) ) : ?>
-            <?php $logo = get_field( 'logo', 'option' ); ?>
-            <img id="cd_logo" class="cd-logo" src="<?php echo $logo['sizes']['thumbnail']; ?>" alt="<?php echo $logo['alt']; ?>"/>
-          <?php else: ?>
-            <h1><?php bloginfo( 'title' ); ?></h1>
-          <?php endif; ?>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-          <i id="cd_toggle" class="fa fa-bars"></i>
-        </button>
-
-        <div class="collapse navbar-collapse cd-menu text-right text-md-left" id="main_menu">
-
-          <?php
-            $args = array(
-              'theme_location' => 'header-menu',
-              'menu_class'  => 'navbar-nav nav align-items-end',
-              'container'   => 'false'
-            );
-            wp_nav_menu( $args );
-          ?>
-
-          <button class="search-button" id="searchButton">
-            <i class="fa fa-search fa-2x ml-2 accent"></i>
-          </button>
-
-          <div class="search-form">
-            <form class="form-inline search-form" id="searchForm" method="GET" action="<?php echo home_url(); ?>">
-              <input class="form-control" type="search" aria-label="Search" name="s">
-              <button class="btn search-submit" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-
-        </div>
-
-      </nav>
+      <?php get_template_part( '/template-parts/nav' ); ?>
 
       <!-- <?php //get_template_part( 'breadcrumbs' ); ?> -->
     </div><!-- .cd-slider-nav -->
 
-    <div id="header_carousel_<?php echo $post->ID; ?>" class="carousel">
+    <div id="header_carousel_<?php echo $post->ID; ?>">
 
+      <?php
+        $gallery = get_field( 'gallery' );
+        $sliders = array();
+        foreach ( $gallery as $image ) {
+          if ( get_field( 'slider', $image['ID'] ) ) {
+            array_push( $sliders, $image );
+          }
+        }
+      ?>
 
       <div class="fl-main-carousel">
         <?php foreach ( $sliders as $image ) : ?>

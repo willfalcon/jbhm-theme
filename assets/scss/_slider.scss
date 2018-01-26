@@ -1,0 +1,74 @@
+.cd-slider-nav {
+  z-index: 10;
+
+  @media (min-width: $break) {
+    z-index: 1;
+    width: 100%;
+
+    nav.cd-nav {
+      background-color: rgba(55, 55, 55, .6);
+      z-index: 10;
+    }
+  }
+}
+
+.fl-main-carousel,
+.video-header {
+  max-height: 900px;
+  max-height: 100vh;
+}
+
+.video-header {
+  width: 100%;
+  video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.admin-bar .fl-main-carousel {
+  max-height: 95vh;
+}
+
+.fl-carousel-cell {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.flickity-viewport {
+  transition: height 0.2s;
+}
+
+/* position dots in carousel */
+.flickity-page-dots {
+  bottom: 0px;
+  margin-bottom: 1rem;
+
+  /* white circles */
+  .dot {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background: transparent;
+    border: 2px solid white;
+
+    /* fill-in selected dot */
+    &.is-selected {
+      background: white;
+    }
+  }
+}
+
+.img-slider {
+  height: auto;
+  max-height: 100vh;
+  max-width: 100%;
+}

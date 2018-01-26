@@ -16,86 +16,110 @@ jQuery(document).ready(function($) {
     $industryMasonry.masonry('layout');
   });
 
-  // $('.carousel').on('slide.bs.carousel', function () {
-  //   var height = $('data-height');
-  //   console.log(height);
-  //   $('.carousel').css('height', height + 'px' );
+
+  // $('#breadcrumb_toggle').on('click', function() {
+  //   if ($('#industry_list').data('expanded') == false) {
+  //     $('#industry_list').show();
+  //     $('#industry_list').css({
+  //       'transform': 'translateY(0px)',
+  //       'opacity': '1'
+  //     });
+  //     $('#industry_list').data('expanded', true);
+  //     $({deg: 0}).animate({deg: -180}, {
+  //         duration: 300,
+  //         step: function(now){
+  //             $('#breadcrumb_toggle').css({
+  //                  transform: "rotate(" + now + "deg)"
+  //             });
+  //         }
+  //     });
+  //
+  //   } else if ($('#industry_list').data('expanded') == true) {
+  //     $('#industry_list').css('display', 'none');
+  //     $('#industry_list').data('expanded', false);
+  //     $({deg: 180}).animate({deg: 0}, {
+  //         duration: 300,
+  //         step: function(now){
+  //             $('#breadcrumb_toggle').css({
+  //                  transform: "rotate(" + now + "deg)"
+  //             });
+  //         }
+  //     });
+  //   }
+  //
   // });
-
-
-
-  $('#breadcrumb_toggle').on('click', function() {
-    if ($('#industry_list').data('expanded') == false) {
-      $('#industry_list').show();
-      $('#industry_list').css({
-        'transform': 'translateY(0px)',
-        'opacity': '1'
-      });
-      $('#industry_list').data('expanded', true);
-      $({deg: 0}).animate({deg: -180}, {
-          duration: 300,
-          step: function(now){
-              $('#breadcrumb_toggle').css({
-                   transform: "rotate(" + now + "deg)"
-              });
-          }
-      });
-
-    } else if ($('#industry_list').data('expanded') == true) {
-      $('#industry_list').css('display', 'none');
-      $('#industry_list').data('expanded', false);
-      $({deg: 180}).animate({deg: 0}, {
-          duration: 300,
-          step: function(now){
-              $('#breadcrumb_toggle').css({
-                   transform: "rotate(" + now + "deg)"
-              });
-          }
-      });
-    }
-
-  });
 
 // initialize lightbox
   lightbox.option({
-       'resizeDuration': 200,
-       'wrapAround': true,
-       'disableScrolling': true
-     });
+    'resizeDuration': 200,
+    'wrapAround': true,
+    'disableScrolling': true
+   });
 
 // initialize flickity
    $('.fl-main-carousel').flickity({
-   // options
-   cellAlign: 'center',
-   contain: true,
-   imagesLoaded: true,
-   adaptiveHeight: true,
-   autoPlay: 5000,
-   wrapAround: true
- });
+     // options
+     cellAlign: 'center',
+     contain: true,
+     imagesLoaded: true,
+     adaptiveHeight: true,
+     autoPlay: 5000,
+     wrapAround: true
+   });
 
 
-// var searchForm = document.getElementById("searchForm");
- var formWidth = '-320px';
- console.log(formWidth);
- //$("#main_menu").css("transform", "translateX(" + formWidth + ")");
-
- var searchButton = document.getElementById("searchButton");
- searchButton.addEventListener("mouseover", function(){
-   $("#main_menu").css("right", 0);
-   // $("#searchButton").css("transform", "translateX(0)");
-   // $("#searchForm").css("transform", "translateX(0)");
- });
-
- searchButton.addEventListener("click", function() {
-   $("#main_menu").css("right", formWidth);
-   // $("#searchButton").css("transform", "translateX(" + formWidth + ")");
-   // $("#searchForm").css("transform", "translateX(" + formWidth + ")");
- });
 }); //document.ready
 
 
-// document.getElementById('learn_more_link').on
+ var formWidth = '-320px';
+
+ var searchButton = document.getElementById("searchButton");
+
+ searchButton.addEventListener("mouseover", function(){
+   jQuery("#main_menu").css("right", 0);
+ });
+
+ searchButton.addEventListener("click", function() {
+   jQuery("#main_menu").css("right", formWidth);
+ });
+
+window.onscroll = function() {scrollFunction()};
+
+// Minified sticky navbar after scroll past 50px;
+function scrollFunction() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+
+    if (!jQuery("#cd_header").hasClass("cd-mini-nav")) {
+      jQuery("#cd_header").addClass("cd-mini-nav");
+    }
+
+    if (jQuery("#cd_header").hasClass("navbar-expand-lg")) {
+      jQuery("#cd_header").removeClass("navbar-expand-lg");
+    }
+    if (jQuery("#cd_header").hasClass("navbar-expand-lg")) {
+      jQuery("#cd_header").removeClass("navbar-expand-lg");
+    }
+
+    jQuery("#main_menu").css("right", 0);
+
+  } else {
+
+    if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
+      jQuery("#cd_header").removeClass("cd-mini-nav");
+    }
+
+    if (! jQuery("#cd_header").hasClass("navbar-expand-lg")) {
+      jQuery("#cd_header").addClass("navbar-expand-lg");
+    }
+
+    if (jQuery("#main_menu").hasClass("show")) {
+      jQuery("#main_menu").removeClass("show");
+    }
+
+    jQuery("#main_menu").css("right", formWidth);
+
+  }
+}
 
 function rotateCaret(){
 
@@ -130,38 +154,4 @@ function rotateCaret(){
   }
 
 
-}
-
-
-window.onscroll = function() {scrollFunction()};
-
-// Minified sticky navbar after scroll past 50px;
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    if (!jQuery("#cd_header").hasClass("cd-mini-nav")) {
-      jQuery("#cd_header").addClass("cd-mini-nav");
-    }
-    // document.getElementById("cd_logo").style.height = "60px";
-    // document.getElementById("cd_toggle").style.fontSize = "1.5rem";
-    if (jQuery("#cd_header").hasClass("navbar-expand-md")) {
-      jQuery("#cd_header").removeClass("navbar-expand-md");
-    }
-    jQuery("#main_menu").css("right", 0);
-  } else {
-    if (jQuery("#cd_header").hasClass("cd-mini-nav")) {
-      jQuery("#cd_header").removeClass("cd-mini-nav");
-    }
-    if (! jQuery("#cd_header").hasClass("navbar-expand-md")) {
-      jQuery("#cd_header").addClass("navbar-expand-md");
-    }
-    if (jQuery("#main_menu").hasClass("show")) {
-      jQuery("#main_menu").removeClass("show");
-    }
-
-    jQuery("#main_menu").css("right", formWidth);
-    // jQuery("#searchButton").css("transform", "translateX(" + formWidth + ")");
-    // jQuery("#searchForm").css("transform", "translateX(" + formWidth + ")");
-
-
-  }
 }
