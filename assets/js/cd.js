@@ -31,6 +31,7 @@ jQuery(document).ready(function($) {
 
   if ( spaceHeightDifference > 20 ) {
     console.log('add ' + spaceHeightDifference + 'px of top margin to content');
+    $('.container-fluid').css('margin-top', spaceHeightDifference + 'px' );
   }
 
 
