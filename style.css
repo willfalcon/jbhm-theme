@@ -39,6 +39,11 @@ This theme, like WordPress, is licensed under the GPL.
 /*-------------     Typography     --------------*/
 /*-----------------------------------------------*/
 
+
+.video-header {
+  overflow: hidden;
+}
+
 html {
   font-size: 18px;
   line-height: 18px;
