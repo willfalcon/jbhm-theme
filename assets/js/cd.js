@@ -30,8 +30,7 @@ jQuery(document).ready(function($) {
   console.log('difference between video height and video space: ', spaceHeightDifference);
 
   if ( spaceHeightDifference > 20 ) {
-    console.log('add ' + videoHeight + 'px of top margin to content');
-    $('.container-fluid').css('margin-top', videoHeight + 'px' );
+    $('.video-header').css('height', videoHeight + 'px' );
   }
 
 
