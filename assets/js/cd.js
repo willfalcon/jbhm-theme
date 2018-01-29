@@ -29,6 +29,10 @@ jQuery(document).ready(function($) {
   var spaceHeightDifference = videoHeight - videoSpace;
   console.log('difference between video height and video space: ', spaceHeightDifference);
 
+  if ( spaceHeightDifference > 20 ) {
+    console.log('add ' + spaceHeightDifference + 'px of top margin to content');
+  }
+
 
   // $('#breadcrumb_toggle').on('click', function() {
   //   if ($('#industry_list').data('expanded') == false) {
