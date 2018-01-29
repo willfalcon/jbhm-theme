@@ -349,4 +349,7 @@
   .menu-item-has-children:hover .sub-menu {
     display: block; }
 
+.font-size-1 {
+  font-size: 1rem !important; }
+
 /*# sourceMappingURL=styles.css.map */
