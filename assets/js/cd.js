@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
   console.log('difference between video height and video space: ', spaceHeightDifference);
 
   if ( spaceHeightDifference > 20 ) {
-    $('.video-header').css('height', videoHeight + 'px' );
+    $('.video-header').css('min-height', videoHeight + 'px' );
   }
 
 
