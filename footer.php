@@ -4,7 +4,7 @@
 
 ?>
 
-      <div class="cd-footer">
+      <div class="cd-footer row">
 
         <div class="footer-logo">
 
