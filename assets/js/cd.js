@@ -16,6 +16,19 @@ jQuery(document).ready(function($) {
     $industryMasonry.masonry('layout');
   });
 
+  var videoHeight = $('.video-header').height();
+  var contentHeight = $('.container-fluid').height();
+  var bodyHeight = $('body').height();
+
+  console.log('videoHeight: ', videoHeight);
+  console.log('contentHeight: ', contentHeight);
+  console.log('bodyHeight: ', bodyHeight);
+
+  var videoSpace = bodyHeight - contentHeight;
+
+  console.log('available space for video: ', videoSpace);
+
+
 
   // $('#breadcrumb_toggle').on('click', function() {
   //   if ($('#industry_list').data('expanded') == false) {
