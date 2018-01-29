@@ -141,8 +141,8 @@ return $args;
 }
 
 // filter for a specific field based on it's name
-add_filter('acf/fields/post_object/query/name=projects_picker', 'filter_project_picker_industries', 10, 3);
-add_filter('acf/fields/post_object/query/name=project_picker_services', 'filter_project_picker_services', 10, 3);
+add_filter('acf/fields/post_object/query/name=projects_picker_industries', 'filter_project_picker_industries', 10, 3);
+add_filter('acf/fields/post_object/query/name=projects_picker_services', 'filter_project_picker_services', 10, 3);
 
 
 function filter_project_picker_awards( $args, $field, $post_id ) {
