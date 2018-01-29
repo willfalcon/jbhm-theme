@@ -16,18 +16,18 @@ jQuery(document).ready(function($) {
     $industryMasonry.masonry('layout');
   });
 
-  var videoHeight = $('.video-header').height();
+  var videoHeight = $('.video-header > video').height();
   var contentHeight = $('.container-fluid').height();
   var bodyHeight = $('body').height();
-
   console.log('videoHeight: ', videoHeight);
   console.log('contentHeight: ', contentHeight);
   console.log('bodyHeight: ', bodyHeight);
 
   var videoSpace = bodyHeight - contentHeight;
-
   console.log('available space for video: ', videoSpace);
 
+  var spaceHeightDifference = videoHeight - videoSpace;
+  console.log('difference between video height and video space: ', spaceHeightDifference);
 
 
   // $('#breadcrumb_toggle').on('click', function() {
