@@ -20,9 +20,9 @@
 
 <div <?php post_class(); ?>>
 
-  <div class="row my-5">
+  <div class="row">
     <div class="col">
-      <h2 class="project-title accent"><?php the_title();  ?></h2>
+      <h2 class="project-title accent py-3 m-0 text-center"><?php the_title();  ?></h2>
     </div>
   </div>
 

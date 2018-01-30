@@ -8,7 +8,7 @@
 
         <div class="footer-logo">
 
-          <h1 class="mt-1">
+          <h1 class="mt-1 mr-4">
             <strong>JBHM</strong> Architecture
           </h1>
 
