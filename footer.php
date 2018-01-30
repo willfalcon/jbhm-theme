@@ -8,7 +8,10 @@
 
         <div class="footer-logo">
 
-          <img class="img-fluid" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
+          <h1 class="mt-1 mr-4">
+            <strong>JBHM</strong> Architecture
+          </h1>
+
 
         </div>
 
@@ -64,13 +67,11 @@
 
         </div><!-- .footer-contact -->
 
-        <div class="footer-copyright">
 
           <?php if ( get_field( 'copyright_label', 'option' ) ) : ?>
-            <p>&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
+            <p class="copyright my-1">&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
           <?php endif; ?>
 
-        </div>
 
 
       </div><!-- .cd-footer -->

@@ -22,7 +22,7 @@
   // );
   // $query = new WP_Query( $args );
   //
-  $projects = get_field( 'project_picker_services', $acfID );
+  $projects = get_field( 'projects_picker_services', $acfID );
 
 ?>
 
@@ -41,54 +41,14 @@
 
 <?php if ( $projects ) : ?>
 
-  <div class="row">
-    <div class="cd-gallery">
+  <div class="tax-grid row">
 
-      <div class="cd-gallery-sizer"></div>
+    <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
 
-      <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
+      <?php get_template_part( '/template-parts/grid-single-project' ); ?>
 
-        <?php
+    <?php endforeach; ?>
 
-          if ( get_field( 'header_img' ) ) {
-            $img = get_field( 'header_img' );
-          } else {
-            $gallery = get_field( 'gallery' );
-            $img = $gallery[0];
-          }
-
-          $width = $img['width'];
-          $height = $img['height'];
-          $ratio = $width / $height;
-
-          $location = ( get_field( 'location' ) ? get_field( 'location' ) : false );
-
-          /*<?php if ( $ratio > 1.8 ) : ?> cd-gallery-wide<?php endif;?>*/
-
-        ?>
-
-          <a class="cd-gallery-item frontpage-gallery-item" href="<?php the_permalink(); ?>?t=s&o=<?php echo $currentTerm->term_id; ?>">
-
-            <img class="img-fluid" src="<?php echo cd_get_minimum_img_size( $img, 500); ?>" alt="<?php echo $img['alt']; ?>"/>
-
-            <div class="frontpage-project-info<?php if ( ! $location ) : ?> no-location<?php endif; ?>">
-
-              <div class="text-left w-75 h-size-adjust">
-                <h4><?php the_title(); ?></h4>
-                <hr class="accent">
-                <h5><?php the_field( 'location' ); ?></h5>
-              </div>
-              <div class="text-right d-none d-md-block">
-                <p class="cd-more mb-0">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-              </div>
-
-            </div>
-
-          </a>
-
-      <?php endforeach; ?>
-
-    </div>
   </div>
 
 

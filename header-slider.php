@@ -19,7 +19,6 @@
 
       <?php get_template_part( '/template-parts/nav' ); ?>
 
-      <!-- <?php //get_template_part( 'breadcrumbs' ); ?> -->
     </div><!-- .cd-slider-nav -->
 
     <div id="header_carousel_<?php echo $post->ID; ?>">

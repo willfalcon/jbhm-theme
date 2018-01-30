@@ -53,9 +53,6 @@ $headerImg = $headerImg['sizes']['large'];
 
         <?php get_template_part( '/template-parts/nav' ); ?>
 
-
-        <!-- <?php //get_template_part( 'breadcrumbs' ); ?> -->
-
       </div><!-- .header-img -->
 
       <div class="container-fluid">

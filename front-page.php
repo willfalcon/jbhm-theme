@@ -37,6 +37,25 @@
     </div>
   </div>
 
-  <?php get_template_part( 'inc/gallery', 'front' ); ?>
+  <div class="tax-grid row">
+
+    <?php
+
+      $projects = get_field( 'project_gallery' );
+
+    ?>
+
+    <?php if ( $projects ) : ?>
+
+    <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
+
+      <?php get_template_part( '/template-parts/grid-single-project' ); ?>
+
+    <?php endforeach;  ?>
+
+
+    <?php endif; wp_reset_postdata(); ?>
+
+  </div>
 
 <?php get_footer(); ?>

@@ -39,6 +39,11 @@ This theme, like WordPress, is licensed under the GPL.
 /*-------------     Typography     --------------*/
 /*-----------------------------------------------*/
 
+
+.video-header {
+  overflow: hidden;
+}
+
 html {
   font-size: 18px;
   line-height: 18px;
@@ -324,6 +329,7 @@ body {
   color: black;
   text-transform: uppercase;
   font-weight: bold;
+  font-size: 1.5rem;
 }
 .office a {
   color: #4A4A4A;
@@ -392,6 +398,7 @@ body {
 
 .project-title {
   text-transform: uppercase;
+  font-weight: 300;
 }
 
 .project-description p {
@@ -444,6 +451,7 @@ body {
 .lightbox .lb-image {
   border: 0px;
 }
+
 
 /*------------ Industry Archive Page ------------*/
 /*------------- (page-projects.php) -------------*/
@@ -603,17 +611,12 @@ span.award-name {
   background-color: #EEEEEE;
   margin-top: 1rem;
   padding: 20px;
-  padding-left: 0;
-  font-size: .9rem;
   /* max-width: 100%; */
   /* margin-left: -15px;
   margin-right: -15px;
   width: 100%; */
-
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -621,11 +624,20 @@ span.award-name {
           flex-flow: row wrap;
 }
 
+.cd-footer * {
+  line-height: 14px;
+  font-size: 14px;
+}
+
+
+.footer-logo h1 {
+  font-family: 'acumin-pro', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 14px;
+}
+
 .footer-contact {
   display: block;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 2 100%;
-          flex: 1 2 100%;
 }
 
 .footer-contact a {
@@ -645,16 +657,12 @@ span.award-name {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+
   }
   .footer-contact {
     display: inline-block;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 2 auto;
-            flex: 1 2 auto;
-    text-align: center;
+    /* flex: 1 2 auto; */
+    /* text-align: center; */
   }
   .footer-contact a {
     display: inline-block;
@@ -665,8 +673,10 @@ span.award-name {
     display: block;
     margin: 10px;
   }
-  .footer-copyright {
-    margin-left: 10px;
+  .copyright {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 2 100%;
+            flex: 1 2 100%;
   }
 }
 
@@ -675,8 +685,9 @@ span.award-name {
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
-  font-size: 1.5em;
+  font-size: 14px;
   vertical-align: middle;
+  margin-top: .5em;
 }
 
 .social-icon .fa-stack-2x {
@@ -686,12 +697,13 @@ span.award-name {
   font-size: 1em;
 }
 
-
-.footer-copyright {
-  /* TODO: left default, center at md breakpoint */
-  text-align: right;
-  font-size: .75rem;
-  color: #A7A7A7;
+@media (min-width: 768px) {
+  .copyright {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+  }
 }
 
 /*--------------------------------------------*/
