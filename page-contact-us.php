@@ -10,9 +10,14 @@
 
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <div class="row page-content"><div class="col">
-        <h2 class="accent py-3 m-0"><?php the_title(); ?></h2>
-      </div></div>
+      <div class="row page-content">
+        <div class="col-12">
+          <h2 class="accent py-3 m-0"><?php the_title(); ?></h2>
+        </div>
+        <div class="col-12">
+          <?php the_content(); ?>
+        </div>
+      </div>
 
       <div class="row page-content">
 
