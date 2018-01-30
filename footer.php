@@ -8,7 +8,7 @@
 
         <div class="footer-logo">
 
-          <h1 class="mb-0">
+          <h1 class="mt-1">
             <strong>JBHM</strong> Architecture
           </h1>
 
@@ -69,7 +69,7 @@
 
 
           <?php if ( get_field( 'copyright_label', 'option' ) ) : ?>
-            <p class="copyright">&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
+            <p class="copyright my-1">&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
           <?php endif; ?>
 
 
