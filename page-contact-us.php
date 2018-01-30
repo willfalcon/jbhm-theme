@@ -63,10 +63,18 @@
 
         <?php endif; ?>
 
-        <?php if ( have_rows( 'bid_documents' ) ) : ?>
+        <?php if ( get_field( 'sidebar_content' ) || have_rows( 'bid_documents' ) ) : ?>
 
           <aside class="col-md-3 project-sidebar sticky-sidebar">
             <div class="project-details">
+
+              <?php if ( get_field( 'sidebar_content' ) ) : ?>
+
+                <?php the_field( 'sidebar_content' ); ?>
+
+              <?php endif; ?>
+
+              <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
               <h5>Bid Documents</h5>
 
@@ -77,11 +85,13 @@
                 </a>
 
               <?php endwhile; ?>
+            <?php endif; ?>
 
             </div>
           </aside>
 
         <?php endif; ?>
+
 
       </div>
 
