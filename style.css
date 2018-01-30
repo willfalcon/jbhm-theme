@@ -406,10 +406,30 @@ body {
   color: #676767;
 }
 
-.project-details {
+.project-details,
+.page-sidebar-content {
   border-top: 10px solid #69A53C;
   border-bottom: 10px solid #69A53C;
   padding: 1.5rem 0;
+}
+
+.page-sidebar-content p {
+  line-height: 1.25;
+  font-size: 15px;
+}
+
+.page-sidebar-content a {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.page-sidebar-content h1,
+.page-sidebar-content h2,
+.page-sidebar-content h3,
+.page-sidebar-content h4,
+.page-sidebar-content h5,
+.page-sidebar-content h6 {
+  font-size: 1.25rem;
 }
 
 .project-details > * {
