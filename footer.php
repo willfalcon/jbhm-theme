@@ -16,7 +16,6 @@
         </div>
 
         <div class="footer-contact">
-
           <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
 
             <a class="social-link" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
@@ -51,7 +50,7 @@
 
           <?php if ( get_field ( 'contact_phone', 'option' ) ) : ?>
 
-            <a href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
+            <a class="my-1" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
               <?php the_field( 'contact_phone', 'option' ); ?>
             </a>
 
@@ -59,7 +58,7 @@
 
           <?php if ( get_field( 'contact_email', 'option' ) ) : ?>
 
-            <a href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
+            <a class="my-1" href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
               <?php the_field( 'contact_email', 'option' ); ?>
             </a>
 
