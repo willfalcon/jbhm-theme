@@ -5,9 +5,9 @@
 
 <?php if ( $gallery ) : ?>
 
-  <div class="project-carousel mt-5">
+  <div class="cd-gallery mt-5">
 
-
+    <div class="cd-gallery-sizer"></div>
 
     <?php foreach( $gallery as $image ) : ?>
 
@@ -30,7 +30,7 @@
 
       ?>
       <a class="cd-gallery-item" href="<?php echo $image['url']; ?>" data-lightbox="project_gallery_<?php echo $post->ID; ?>">
-        <img class="" src="<?php echo $imgSrc; ?>" alt="<?php echo $image['alt']; ?>"/>
+        <img class="img-fluid gallery-img" src="<?php echo $imgSrc; ?>" alt="<?php echo $image['alt']; ?>"/>
       </a>
 
 

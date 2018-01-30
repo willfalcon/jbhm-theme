@@ -349,6 +349,23 @@
   .menu-item-has-children:hover .sub-menu {
     display: block; }
 
+.project-carousel {
+  height: 300px; }
+  .project-carousel .cd-gallery-item {
+    margin-right: 10px;
+    height: 100%;
+    width: auto; }
+    .project-carousel .cd-gallery-item img {
+      max-height: 100%;
+      width: auto; }
+  .project-carousel .flickity-page-dots {
+    margin: 0;
+    bottom: -25px; }
+    .project-carousel .flickity-page-dots .dot {
+      border: 2px solid #777777; }
+      .project-carousel .flickity-page-dots .dot.is-selected {
+        background: #777777; }
+
 .font-size-1 {
   font-size: 1rem !important; }
 

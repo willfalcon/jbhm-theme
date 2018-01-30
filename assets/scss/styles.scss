@@ -1,5 +1,9 @@
+$break-md: 768px;
+$break-lg: 992px;
+
 @import 'grid';
 @import 'header';
+@import 'project-gallery';
 
 .font-size-1 {
   font-size: 1rem !important;

@@ -74,6 +74,7 @@ jQuery(document).ready(function($) {
    });
 
 // initialize flickity
+  // Project headers
    $('.fl-main-carousel').flickity({
      // options
      cellAlign: 'center',
@@ -83,6 +84,18 @@ jQuery(document).ready(function($) {
      autoPlay: 5000,
      wrapAround: true
    });
+
+  //Project gallery
+  $('.project-carousel').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    cellAlign: 'left',
+    imagesLoaded: true,
+    percentPosition: false
+
+  });
 
 
 }); //document.ready
