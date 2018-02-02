@@ -43,8 +43,6 @@
               <h3 class="w-75 font-size-1 align-self-start"><?php echo $service->name; ?></h3>
             </div>
 
-            <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-
           </a>
 
 

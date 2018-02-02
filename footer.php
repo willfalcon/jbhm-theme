@@ -4,18 +4,18 @@
 
 ?>
 
-      <div class="cd-footer row">
+      <div id="cd_footer" class="cd-footer row">
 
-        <div class="footer-logo">
+        <div class="footer-logo d-flex align-items-center">
 
-          <h1 class="mt-1 mr-4">
+          <h1 class="my-md-0 mr-md-4">
             <strong>JBHM</strong> Architecture
           </h1>
 
 
         </div>
 
-        <div class="footer-contact">
+        <div class="footer-contact d-flex align-items-center">
           <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
 
             <a class="social-link" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
@@ -50,7 +50,7 @@
 
           <?php if ( get_field ( 'contact_phone', 'option' ) ) : ?>
 
-            <a class="my-1" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
+            <a class="my-md-0" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
               <?php the_field( 'contact_phone', 'option' ); ?>
             </a>
 
@@ -58,7 +58,7 @@
 
           <?php if ( get_field( 'contact_email', 'option' ) ) : ?>
 
-            <a class="my-1" href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
+            <a class="my-md-0" href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
               <?php the_field( 'contact_email', 'option' ); ?>
             </a>
 
@@ -67,8 +67,19 @@
         </div><!-- .footer-contact -->
 
 
+            <div class="search-form">
+              <form class="form-inline search-form justify-content-center" id="searchForm" method="GET" action="<?php echo home_url(); ?>">
+                <input id="search_here" class="form-control mb-1 mb-md-0 mr-md-1" type="search" aria-label="Search" name="s">
+                <button class="btn search-submit mt-1 mt-md-0 ml-md-1" type="submit">
+                  Search
+                </button>
+              </form>
+            </div>
+
           <?php if ( get_field( 'copyright_label', 'option' ) ) : ?>
-            <p class="copyright my-1">&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
+            <div class="d-flex align-items-center">
+              <p class="copyright mt-3 my-md-0">&copy; <?php the_field( 'copyright_label', 'option' ); ?> <?php echo date_i18n('Y'); ?>
+            </div>
           <?php endif; ?>
 
 

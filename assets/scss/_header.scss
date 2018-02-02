@@ -71,6 +71,7 @@ $background-color: #595959;
   justify-content: flex-end;
   float: right;
   transition: all .25s;
+  flex-wrap: wrap;
 
   > ul {
     flex-wrap: nowrap;
@@ -80,19 +81,22 @@ $background-color: #595959;
     display: inline-block;
   }
 
-  .cd-mini-nav & {
-    position: relative;
-    right: 0;
-  }
+  // .cd-mini-nav & {
+  //   position: relative;
+  //   right: 0;
+  // }
 
   .no-flexbox & {
     width: calc(100% - 318px);
   }
 
   @media (min-width: $break) {
-    position: absolute;
-    right: -320px;
-
+    // position: absolute;
+    // right: -320px;
+    flex-wrap: nowrap;
+    .cd-mini-nav & {
+      flex-wrap: wrap;
+    }
     &.show {
       display: block;
       display: flex!important;
@@ -143,9 +147,6 @@ $background-color: #595959;
   color: #6BA443;
   cursor: pointer;
 
-  .cd-mini-nav & {
-    display: none;
-  }
 
   &:focus {
     outline: none;
@@ -204,9 +205,9 @@ $background-color: #595959;
 }
 
 @media (max-width: $break - 1) {
-  .search-form,
+
   .search-button {
-    display:none !important;
+    width: 100%;
   }
 }
 }

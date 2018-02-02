@@ -33,13 +33,9 @@
             </div>
 
 
-            <div class="text-left frontpage-project-info no-location">
-              <h3 class="w-75 font-size-1 align-self-start"><?php echo $industry->name; ?></h3>
+            <div class="text-left frontpage-project-info no-location tax-archive-item">
+              <h3 class="font-size-1"><?php echo $industry->name; ?></h3>
             </div>
-
-            <p class="more-link">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-
-
 
           </a>
 

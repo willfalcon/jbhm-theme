@@ -647,7 +647,6 @@ span.award-name {
 }
 
 .cd-footer * {
-  line-height: 14px;
   font-size: 14px;
 }
 
@@ -655,7 +654,6 @@ span.award-name {
 .footer-logo h1 {
   font-family: 'acumin-pro', Arial, sans-serif;
   font-size: 14px;
-  line-height: 14px;
 }
 
 .footer-contact {
@@ -691,9 +689,34 @@ span.award-name {
   }
 }
 @media (max-width: 767px) {
+  .cd-footer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .footer-logo {
+    width: 100%;
+  }
+  .footer-logo h1 {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
   .footer-contact a {
     display: block;
     margin: 10px;
+
   }
   .copyright {
     -webkit-box-flex: 1;
@@ -726,6 +749,13 @@ span.award-name {
             flex-grow: 1;
     text-align: right;
   }
+}
+
+
+.search-form {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 /*--------------------------------------------*/
@@ -875,6 +905,7 @@ span.award-name {
 .cd-footer {
   clear: both;
 }
+
 /*--------------------------------------------*/
 /*---------------    Search    ---------------*/
 /*--------------------------------------------*/
