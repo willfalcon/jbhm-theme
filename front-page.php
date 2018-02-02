@@ -43,18 +43,19 @@
 
       $projects = get_field( 'project_gallery' );
 
+      $args = array(
+        'post_type' => 'project',
+        'posts_per_page' => 12
+      );
+
+      $query = new WP_Query( $args );
     ?>
 
-    <?php if ( $projects ) : ?>
-
-    <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
+    <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <?php get_template_part( '/template-parts/grid-single-project' ); ?>
 
-    <?php endforeach;  ?>
-
-
-    <?php endif; wp_reset_postdata(); ?>
+    <?php endwhile; endif; ?>
 
   </div>
 

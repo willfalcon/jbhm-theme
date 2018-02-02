@@ -9,20 +9,20 @@
     get_header();
   }
 
-  // $args = array(
-  //   'post_type' => 'project',
-  //   'tax_query' => array(
-  //     array(
-  //       'taxonomy' => 'services',
-  //       'field' => 'slug',
-  //       'terms' => $currentTerm->slug
-  //     )
-  //   ),
-  //   'posts_per_page' => -1
-  // );
-  // $query = new WP_Query( $args );
-  //
-  $projects = get_field( 'projects_picker_services', $acfID );
+  $args = array(
+    'post_type' => 'project',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'services',
+        'field' => 'slug',
+        'terms' => $currentTerm->slug
+      )
+    ),
+    'posts_per_page' => -1
+  );
+  $query = new WP_Query( $args );
+
+  // $projects = get_field( 'projects_picker_services', $acfID );
 
 ?>
 
@@ -39,15 +39,15 @@
 </div>
 
 
-<?php if ( $projects ) : ?>
+<?php if ( $query->have_posts() ) : ?>
 
   <div class="tax-grid row">
 
-    <?php foreach ( $projects as $post ) : setup_postdata( $post ); ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <?php get_template_part( '/template-parts/grid-single-project' ); ?>
 
-    <?php endforeach; ?>
+    <?php endwhile; ?>
 
   </div>
 
