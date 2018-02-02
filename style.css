@@ -407,11 +407,21 @@ body {
   color: #676767;
 }
 
-.project-details,
-.page-sidebar-content {
+.project-details {
   border-top: 10px solid #69A53C;
   border-bottom: 10px solid #69A53C;
   padding: 1.5rem 0;
+}
+
+.page-sidebar-content {
+  border-top: 5px solid #69A53C;
+  border-bottom: 5px solid #69A53C;
+  padding: 1.5rem 0;
+}
+
+.sidebar-content-wrap {
+    border-bottom: 1px #9B9B9B solid;
+    margin-bottom: 1rem;
 }
 
 .page-sidebar-content p {

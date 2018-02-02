@@ -69,9 +69,9 @@
             <div class="page-sidebar-content">
 
               <?php if ( get_field( 'sidebar_content' ) ) : ?>
-
-                <?php the_field( 'sidebar_content' ); ?>
-
+                <div class="sidebar-content-wrap">
+                  <?php the_field( 'sidebar_content' ); ?>
+                </div>
               <?php endif; ?>
 
               <?php if ( have_rows( 'bid_documents' ) ) : ?>
