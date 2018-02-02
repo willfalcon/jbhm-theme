@@ -140,9 +140,9 @@ if ( 'term_0' != $post_id && substr( $post_id, 0, strlen( $prefix )) == $prefix 
 return $args;
 }
 
-// filter for a specific field based on it's name
-add_filter('acf/fields/post_object/query/name=projects_picker_industries', 'filter_project_picker_industries', 10, 3);
-add_filter('acf/fields/post_object/query/name=projects_picker_services', 'filter_project_picker_services', 10, 3);
+// filter for a specific field based on itss name
+// add_filter('acf/fields/post_object/query/name=projects_picker_industries', 'filter_project_picker_industries', 10, 3);
+// add_filter('acf/fields/post_object/query/name=projects_picker_services', 'filter_project_picker_services', 10, 3);
 
 
 function filter_project_picker_awards( $args, $field, $post_id ) {
@@ -153,7 +153,7 @@ function filter_project_picker_awards( $args, $field, $post_id ) {
 
   return $args;
 }
-add_filter('acf/fields/post_object/query/name=included_projects', 'filter_project_picker_awards', 10, 3);
+//add_filter('acf/fields/post_object/query/name=included_projects', 'filter_project_picker_awards', 10, 3);
 
 
 function cd_get_minimum_img_size( $image, $min_width ) {

@@ -30,7 +30,7 @@
 
 
 <div class="row">
-  <div class="industry-title-wrap">
+  <div class="industry-title-wrap text-center">
     <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
 
     <?php if ( $currentTerm->description ) : ?>

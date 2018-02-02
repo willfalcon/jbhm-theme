@@ -3,6 +3,15 @@
 <?php if ( have_posts() ) : ?>
 
   <div <?php post_class(); ?>>
+
+
+    <div class="row">
+      <div class="col">
+        <h2 class="project-title accent py-3 m-0 text-center">News</h2>
+      </div>
+    </div>
+
+
     <div class="row news-archive">
 
       <?php while ( have_posts() ) : the_post(); ?>

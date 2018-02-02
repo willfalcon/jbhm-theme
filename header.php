@@ -17,6 +17,5 @@
 
         <?php get_template_part( '/template-parts/nav' ); ?>
 
-        <!-- <?php// get_template_part( 'breadcrumbs' ); ?> -->
 
-      <div class="container-fluid" style="margin-top: 130px;">
+      <div class="container-fluid" style="padding-top: 130px;">
