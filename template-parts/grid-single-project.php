@@ -33,9 +33,6 @@
             <?php endif; ?>
           </div>
 
-          <div class="text-right d-none d-md-block">
-            <p class="cd-more mb-0">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-          </div>
 
         </div>
 
