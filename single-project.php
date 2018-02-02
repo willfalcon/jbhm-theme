@@ -26,6 +26,7 @@
 
 ?>
 
+<?php get_template_part( '/inc/gallery', 'project' ); ?>
 
 <div class="project-content-wrap">
 
@@ -91,10 +92,6 @@
 
     </div>
   </div><!-- .project-content-wrap -->
-
-
-
-    <?php get_template_part( '/inc/gallery', 'project' ); ?>
 
 
     <?php if ( get_field( 'testimonial_content' ) ) : ?>
