@@ -1,6 +1,19 @@
-<?php get_header(); ?>
+<?php
 
-<?php if ( have_posts() ) : ?>
+  if ( get_field( 'header_img' ) ) {
+    get_header( 'header_img' );
+  } else {
+    get_header();
+  }
+
+  $args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 18
+  );
+  $query = new WP_Query( $args );
+?>
+
+<?php if ( $query->have_posts() ) : ?>
 
   <div <?php post_class(); ?>>
 
@@ -14,7 +27,7 @@
 
     <div class="row news-archive">
 
-      <?php while ( have_posts() ) : the_post(); ?>
+      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
       <div class="col-12 col-md-6 cd-blog-card">
 
