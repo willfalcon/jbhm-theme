@@ -1,12 +1,12 @@
 <?php
 
-  if ( wp_is_mobile() ) {
-    if ( get_field( 'header_img' ) ) {
-      get_header( 'header_img' );
-    } else {
-      get_header();
-    }
-  } else {
+  // if ( wp_is_mobile() ) {
+  //   if ( get_field( 'header_img' ) ) {
+  //     get_header( 'header_img' );
+  //   } else {
+  //     get_header();
+  //   }
+  // } else {
     if ( get_field( 'video' ) ) {
       get_header( 'video' );
     } elseif ( get_field( 'header_img' ) ) {
@@ -14,7 +14,7 @@
     } else {
       get_header();
     }
-  }
+  // }
 ?>
 
   <div class="row mb-3">
