@@ -195,3 +195,22 @@ function cd_map_link( $address, $city, $state, $zip ) {
   $href = $address . '+' . $city . '+' . $state . '+' . $zip;
   return $href;
 }
+
+function acf_load_office_field_choices($field) {
+
+    // reset choices
+    $field['choices'] = array();
+
+    while ( have_rows('offices', 'post_1465') ) : the_row();
+      $value = get_row_index();
+      $title = get_sub_field('title');
+      $field['choices'][ $value ] = $title;
+
+    endwhile;
+
+    // return the field
+    return $field;
+
+  }
+
+  add_filter('acf/load_field/name=office_select', 'acf_load_office_field_choices');

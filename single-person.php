@@ -21,6 +21,11 @@
           <?php if ( get_field( 'phone' ) ) : ?>
             <a class="d-block" href="tel:<?php the_field( 'phone', false, false ); ?>"><?php the_field( 'phone' ); ?></a>
           <?php endif; ?>
+
+          <?php if ( get_field( 'office_select' ) ) : ?>
+            <?php $office = get_field( 'office_select' );?>
+            <a href="<?php echo home_url(); ?>/contact-us#office_<?php echo $office['value']; ?>"><strong>Office: </strong><?php echo $office['label']; ?></p>
+          <?php endif; ?>
           <hr class="accent">
 
         </div>

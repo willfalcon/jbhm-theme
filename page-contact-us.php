@@ -36,7 +36,7 @@
               ?>
 
               <div class="office">
-                <h2><?php the_sub_field( 'title' ); ?></h2>
+                <h2 class="office-link-header" id="office_<?php the_row_index(); ?>"><?php the_sub_field( 'title' ); ?></h2>
                 <iframe
                   frameborder="0"
                   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDy5M85G3Ima55nYGas8G4sf5ZDSP6zU9M
@@ -86,7 +86,7 @@
                 <?php the_field( 'sidebar_content' ); ?>
               </div>
             <?php endif; ?>
-            
+
             </div>
           </aside>
 

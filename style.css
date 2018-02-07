@@ -332,6 +332,16 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
 }
+
+.office-link-header::before {
+  display: block;
+  content: " ";
+  margin-top: -130px;
+  height: 130px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .office a {
   color: #4A4A4A;
 }
@@ -914,6 +924,7 @@ span.award-name {
 
 .blog-nav-link.right {
   text-align: right;
+  float: right;
 }
 
 .cd-footer {
