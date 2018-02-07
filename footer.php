@@ -40,8 +40,8 @@
 
           <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
 
-            <a class="my-0 social-link" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
-              <span class="fa-stack fa-lg social-icon">
+            <a class="social-link" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
+              <span class="my-0 fa-stack fa-lg social-icon">
                 <i class="fa fa-2x fa-instagram fa-stack-2x"></i>
               </span>
             </a>
