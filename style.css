@@ -338,9 +338,8 @@ body {
 
 .office iframe {
   max-width: 100%;
-  width: 500px;
+  width: 400px;
   height: 300px;
-  height: calc(500px * 3 / 4);
 }
 .bid-docs {
   background-color: rgba(216, 216, 216, .5);
@@ -420,8 +419,13 @@ body {
 }
 
 .sidebar-content-wrap {
-    border-bottom: 1px #9B9B9B solid;
-    margin-bottom: 1rem;
+    border-top: 1px #9B9B9B solid;
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.sidebar-content-wrap p {
+  margin-bottom: 0;
 }
 
 .page-sidebar-content p {

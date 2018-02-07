@@ -68,12 +68,6 @@
           <aside class="col-md-3 project-sidebar sticky-sidebar">
             <div class="page-sidebar-content">
 
-              <?php if ( get_field( 'sidebar_content' ) ) : ?>
-                <div class="sidebar-content-wrap">
-                  <?php the_field( 'sidebar_content' ); ?>
-                </div>
-              <?php endif; ?>
-
               <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
               <h5>Bid Documents</h5>
@@ -87,6 +81,12 @@
               <?php endwhile; ?>
             <?php endif; ?>
 
+            <?php if ( get_field( 'sidebar_content' ) ) : ?>
+              <div class="sidebar-content-wrap">
+                <?php the_field( 'sidebar_content' ); ?>
+              </div>
+            <?php endif; ?>
+            
             </div>
           </aside>
 
