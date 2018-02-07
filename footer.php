@@ -19,7 +19,7 @@
           <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
 
             <a class="social-link" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
-              <span class="fa-stack fa-lg social-icon">
+              <span class="my-0 fa-stack fa-lg social-icon">
                 <i class="fa fa-square-o fa-stack-2x"></i>
                 <i class="fa fa-facebook fa-stack-1x"></i>
               </span>
@@ -30,7 +30,7 @@
           <?php if ( get_field( 'twitter_url', 'option' ) ) : ?>
 
             <a class="social-link" href="<?php the_field( 'twitter_url', 'option' ); ?>" target="_blank">
-              <span class="fa-stack fa-lg social-icon">
+              <span class="my-0 fa-stack fa-lg social-icon">
                 <i class="fa fa-square-o fa-stack-2x"></i>
                 <i class="fa fa-twitter fa-stack-1x"></i>
               </span>
@@ -40,7 +40,7 @@
 
           <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
 
-            <a class="social-link" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
+            <a class="my-0 social-link" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
               <span class="fa-stack fa-lg social-icon">
                 <i class="fa fa-2x fa-instagram fa-stack-2x"></i>
               </span>
