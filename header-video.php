@@ -15,14 +15,14 @@
 
   <body <?php body_class(); ?>>
 
+
     <?php
-      // $gallery = get_field( 'gallery' );
-      // $sliders = array();
-      // foreach ( $gallery as $image ) {
-      //   if ( get_field( 'slider', $image['ID'] ) ) {
-      //     array_push( $sliders, $image );
-      //   }
-      // }
+      if ( wp_is_mobile() ) :
+        $gallery = get_field( 'gallery' );
+
+        
+
+      else :
     ?>
 
 
@@ -43,7 +43,7 @@
 
       </div><!-- .cd-slider-nav -->
 
-
+    <?php endif; ?>
 
 
     <div class="container-fluid">
