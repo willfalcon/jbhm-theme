@@ -28,20 +28,14 @@
     $query = new WP_Query( array(
       'post_type' => 'person',
       'posts_per_page' => -1,
-      'category_name' => $filter,
-      'meta_key' => 'order',
-      'orderby' => 'meta_value_num',
-      'order' => 'ASC'
+      'category_name' => $filter
     ));
 
   } else {
 
     $query = new WP_Query( array(
       'post_type' => 'person',
-      'posts_per_page' => -1,
-      'meta_key' => 'order',
-      'orderby' => 'meta_value_num',
-      'order' => 'ASC'
+      'posts_per_page' => -1
     ));
   }
 

@@ -315,16 +315,6 @@ body {
   padding: 0 15px;
 }
 
-.design-excellence {
-  columns: 3 275px;
-}
-
-.design-excellence h1,
-.design-excellence h2,
-.design-excellence h3 {
-  column-span: all;
-}
-
 /*-----------------------------------------------------*/
 /*---------------   Contact_Us_Page     ---------------*/
 /*-----------------------------------------------------*/
