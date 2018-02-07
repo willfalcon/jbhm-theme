@@ -14,7 +14,7 @@
     } else {
       get_header();
     }
-  // }
+  }
 ?>
 
   <div class="row mb-3">
