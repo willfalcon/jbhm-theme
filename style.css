@@ -810,7 +810,8 @@ span.award-name {
 }
 
 .blog-thumbnail-img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 150px;
   width: 150px;
 }
