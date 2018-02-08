@@ -790,7 +790,8 @@ span.award-name {
   margin-left: -15px;
   margin-right: -15px;
 }
-.blog .news-archive {
+
+.news-archive {
   width: 1000px;
   margin: 0 auto;
   max-width: 100%;
@@ -807,19 +808,15 @@ span.award-name {
   padding-top: 15px;
   padding-bottom: 15px;
 }
-.cd-blog-card > img {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 auto;
-          flex: 0 1 auto;
-  width: auto;
-  max-height: 100%;
+
+.blog-thumbnail-img {
+  object-fit: cover;
+  height: 150px;
+  width: 150px;
 }
 
+
 .cd-blog-desc {
-  background-color: #EEEEEE;
   padding: 1rem .75rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -850,12 +847,6 @@ span.award-name {
   }
   .cd-blog-card h3 {
     font-size: 1.2em;
-  }
-  .cd-blog-card > img {
-    margin-top: 0px;
-    margin-left: 0px;
-    max-width: 66%;
-    width: auto;
   }
   .cd-blog-desc {
     width: inherit;

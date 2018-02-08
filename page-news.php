@@ -29,7 +29,7 @@
 
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <div class="col-12 col-md-6 cd-blog-card">
+      <div class="col-12 cd-blog-card">
 
         <?php
           $featured_img = false;
@@ -42,10 +42,6 @@
 
         ?>
 
-        <?php if ( $featured_img ) : ?>
-          <img src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>" class="img-fluid"/>
-        <?php endif; ?>
-
           <div class="cd-blog-desc">
 
             <div class="cd-blog-tails">
@@ -53,14 +49,21 @@
               <hr class="accent">
               <p><?php the_time( 'n.j.y'); ?></p>
             </div>
-
+<?php /*
             <div class="text-right">
               <a href="<?php the_permalink(); ?>" class="cd-more">
                 More <i class="fa fa-caret-right accent"></i>
               </a>
             </div>
-
+*/ ?>
           </div>
+
+            <?php if ( $featured_img ) : ?>
+              <a href="<?php the_permalink(); ?>">
+                <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
+              </a>
+            <?php endif; ?>
+
 
       </div>
 
