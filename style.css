@@ -807,6 +807,8 @@ span.award-name {
       flex-wrap: wrap;
   padding-top: 15px;
   padding-bottom: 15px;
+  border-top: 1px solid #6BA443
+
 }
 
 .blog-thumbnail-img {

@@ -15,7 +15,7 @@
 
 <?php if ( $query->have_posts() ) : ?>
 
-  <div <?php post_class(); ?>>
+  <main <?php post_class(); ?>>
 
 
     <div class="row">
@@ -29,7 +29,7 @@
 
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <div class="col-12 cd-blog-card">
+      <article class="col-12 cd-blog-card">
 
         <?php
           $featured_img = false;
@@ -46,7 +46,6 @@
 
             <div class="cd-blog-tails">
               <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              <hr class="accent">
               <p><?php the_time( 'n.j.y'); ?></p>
             </div>
 <?php /*
@@ -65,12 +64,19 @@
             <?php endif; ?>
 
 
-      </div>
+      </article>
 
     <?php endwhile; ?>
   </div>
 
-</div>
+
+  <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+    <?php previous_posts_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous' ); ?>
+    <?php next_posts_link( '<p class="blog-nav-link right">%link</p>', 'Next <i class="fa fa-caret-right accent"></i>' ); ?>
+  </div>
+
+
+</main>
 
 <?php else: ?>
 
