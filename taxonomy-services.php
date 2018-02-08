@@ -30,11 +30,12 @@
   <div class="industry-title-wrap text-center">
     <h2 class="accent"><?php echo $currentTerm->name; ?></h2>
 
-    <?php if ( $currentTerm->description ) : ?>
+    <?php if ( term_description() ) : ?>
       <div class="term-description">
-        <p><?php echo $currentTerm->description; ?></p>
+        <?php echo term_description(); ?>
       </div>
     <?php endif; ?>
+    
   </div>
 </div>
 
