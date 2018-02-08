@@ -6,9 +6,12 @@
     get_header();
   }
 
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
   $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 18
+    'posts_per_page' => 12,
+    'paged' => $paged
   );
   $query = new WP_Query( $args );
 ?>
@@ -71,8 +74,17 @@
 
 
   <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
-    <?php previous_posts_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous' ); ?>
-    <?php next_posts_link( '<p class="blog-nav-link right">%link</p>', 'Next <i class="fa fa-caret-right accent"></i>' ); ?>
+
+    <p class="blog-nav-link">
+        <?php previous_posts_link( '<i class="fa fa-caret-left accent"></i> Newer Posts' ); ?>
+
+    </p>
+    <p class="blog-nav-link right">
+
+        <?php next_posts_link( 'Older Posts <i class="fa fa-caret-right accent"></i>', $query->max_num_pages ); ?>
+      
+    </p>
+
   </div>
 
 
