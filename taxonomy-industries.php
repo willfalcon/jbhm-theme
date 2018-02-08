@@ -19,7 +19,7 @@
         'terms' => $currentTerm->slug
       )
     ),
-    'posts_per_page' => -1
+    'posts_per_page' => get_field( 'limit_projects_to', $acfID )
   );
   $query = new WP_Query( $args );
 
