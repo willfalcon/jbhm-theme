@@ -26,7 +26,9 @@ jQuery(document).ready(function($) {
       video.loop = false;
     }, 60000);
   };
-
+  video.onended = function() {
+    video.src = "";
+  }
 
   $industryMasonry.imagesLoaded().progress( function() {
     $industryMasonry.masonry('layout');
