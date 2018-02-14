@@ -19,21 +19,24 @@
     <?php
       if ( wp_is_mobile() ) :
         $gallery = get_field( 'gallery' );
-
-        
-
       else :
     ?>
 
 
     <?php
-      $video = get_field( 'video' );
-      $poster = get_field( 'poster' );
+      $video = get_field( 'front-page_video' );
+      $poster = $video['poster'];
+
     ?>
 
-      <div class="video-header">
-        <video width="100%" autoplay loop muted poster="<?php echo $poster['url']; ?>">
-          <source src="<?php echo $video['url']; ?>" type="<?php echo $video['mime_type']; ?>">
+      <div id="home_video_wrap" class="video-header">
+        <video
+          id="home_video"
+          data-srclarge="<?php echo $video['video_1080']['url']; ?>"
+          data-srcsmall="<?php echo $video['video_720']['url']; ?>"
+          poster="<?php echo $poster['url']; ?>"
+          width="100%" autoplay loop muted >
+          <source type="<?php echo $video['video_1080']['mime_type']; ?>">
         </video>
       </div>
 

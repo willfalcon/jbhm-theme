@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg cd-nav" id="cd_header">
+<nav class="navbar navbar-expand-lg cd-nav<?php if ( wp_is_mobile() ) { echo ' cd-mobile-nav'; } ?>" id="cd_header">
 
 
   <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">

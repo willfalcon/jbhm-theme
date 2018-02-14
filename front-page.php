@@ -1,5 +1,7 @@
 <?php
 
+  $video = get_field( 'front-page_video' );
+
   if ( wp_is_mobile() ) {
     if ( get_field( 'header_img' ) ) {
       get_header( 'header_img' );
@@ -7,7 +9,7 @@
       get_header();
     }
   } else {
-    if ( get_field( 'video' ) ) {
+    if ( $video['video_1080'] ) {
       get_header( 'video' );
     } elseif ( get_field( 'header_img' ) ) {
       get_header( 'header_img' );

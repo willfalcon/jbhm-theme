@@ -12,6 +12,31 @@ jQuery(document).ready(function($) {
     gutter: 10
   });
 
+  var video = document.getElementById('home_video');
+  // console.log('windowWidth:', $(window).width());
+  if ( $(window).width() > 900 ) {
+
+    $('#home_video').attr('src', $('#home_video').data('srclarge'));
+
+  } else {
+
+    video.src = video.dataset.srcsmall;
+
+  }
+
+  $('#home_video').on('play', function() {
+    console.log('video played');
+    window.setTimeout(function() {
+      $('#home_video').attr('loop', false);
+      console.log('video looping stopped');
+    }, 10000);
+  });
+
+  $('#home_video').on('ended', function() {
+    console.log('video ended');
+  });
+
+
   $industryMasonry.imagesLoaded().progress( function() {
     $industryMasonry.masonry('layout');
   });
@@ -19,15 +44,15 @@ jQuery(document).ready(function($) {
   var videoHeight = $('.video-header > video').height();
   var contentHeight = $('.container-fluid').height();
   var bodyHeight = $('body').height();
-  console.log('videoHeight: ', videoHeight);
-  console.log('contentHeight: ', contentHeight);
-  console.log('bodyHeight: ', bodyHeight);
+  // console.log('videoHeight: ', videoHeight);
+  // console.log('contentHeight: ', contentHeight);
+  // console.log('bodyHeight: ', bodyHeight);
 
   var videoSpace = bodyHeight - contentHeight;
-  console.log('available space for video: ', videoSpace);
+  // console.log('available space for video: ', videoSpace);
 
   var spaceHeightDifference = videoHeight - videoSpace;
-  console.log('difference between video height and video space: ', spaceHeightDifference);
+  // console.log('difference between video height and video space: ', spaceHeightDifference);
 
   if ( spaceHeightDifference > 20 ) {
     $('.video-header').css('min-height', videoHeight + 'px' );
