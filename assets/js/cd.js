@@ -13,28 +13,19 @@ jQuery(document).ready(function($) {
   });
 
   var video = document.getElementById('home_video');
-  // console.log('windowWidth:', $(window).width());
-  if ( $(window).width() > 900 ) {
 
-    $('#home_video').attr('src', $('#home_video').data('srclarge'));
-
+  if ( document.documentElement.clientWidth > 900 ) {
+    console.log
+    video.src = video.dataset.srclarge;
   } else {
-
     video.src = video.dataset.srcsmall;
-
   }
 
-  $('#home_video').on('play', function() {
-    console.log('video played');
+  video.onplay = function() {
     window.setTimeout(function() {
-      $('#home_video').attr('loop', false);
-      console.log('video looping stopped');
-    }, 10000);
-  });
-
-  $('#home_video').on('ended', function() {
-    console.log('video ended');
-  });
+      video.loop = false;
+    }, 3000);
+  };
 
 
   $industryMasonry.imagesLoaded().progress( function() {
