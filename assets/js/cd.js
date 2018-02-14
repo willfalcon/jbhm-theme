@@ -13,23 +13,23 @@ jQuery(document).ready(function($) {
   });
 
   var video = document.getElementById('home_video');
+  if (video) {
+    if ( document.documentElement.clientWidth > 900 ) {
 
-  if ( document.documentElement.clientWidth > 900 ) {
-    console.log
-    video.src = video.dataset.srclarge;
-  } else {
-    video.src = video.dataset.srcsmall;
+      video.src = video.dataset.srclarge;
+    } else {
+      video.src = video.dataset.srcsmall;
+    }
+    video.onplay = function() {
+      window.setTimeout(function() {
+        video.loop = false;
+      }, 60000);
+    };
+    video.onended = function() {
+      video.src = "";
+    }
   }
-
-  video.onplay = function() {
-    window.setTimeout(function() {
-      video.loop = false;
-    }, 60000);
-  };
-  video.onended = function() {
-    video.src = "";
-  }
-
+  
   $industryMasonry.imagesLoaded().progress( function() {
     $industryMasonry.masonry('layout');
   });

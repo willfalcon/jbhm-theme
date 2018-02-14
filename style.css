@@ -373,6 +373,10 @@ body {
   text-decoration: underline;
 }
 
+.sticky-sidebar .text-center .social-link:hover {
+  text-decoration: none;
+}
+
 
 /*------------------------------------------------*/
 /*---------------     Services     ---------------*/
@@ -752,7 +756,7 @@ span.award-name {
 }
 
 
-.social-icon {
+.footer-contact .social-icon {
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
@@ -761,10 +765,10 @@ span.award-name {
   margin-top: .5em;
 }
 
-.social-icon .fa-stack-2x {
+.footer-contact .social-icon .fa-stack-2x {
   font-size: 1.5em;
 }
-.social-icon .fa-stack-1x {
+.footer-contact .social-icon .fa-stack-1x {
   font-size: 1em;
 }
 

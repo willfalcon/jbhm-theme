@@ -66,6 +66,7 @@
         <?php if ( get_field( 'sidebar_content' ) || have_rows( 'bid_documents' ) ) : ?>
 
           <aside class="col-md-3 project-sidebar sticky-sidebar">
+            <div>
             <div class="page-sidebar-content">
 
               <?php if ( have_rows( 'bid_documents' ) ) : ?>
@@ -88,6 +89,35 @@
             <?php endif; ?>
 
             </div>
+
+            <div class="text-center mt-3">
+
+              <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
+
+                <a class="social-link mx-2" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
+                  <i class="fa fa-2x fa-facebook"></i>
+                </a>
+
+              <?php endif; ?>
+
+              <?php if ( get_field( 'twitter_url', 'option' ) ) : ?>
+
+                <a class="social-link mx-2" href="<?php the_field( 'twitter_url', 'option' ); ?>" target="_blank">
+                  <i class="fa fa-2x fa-twitter"></i>
+                </a>
+
+              <?php endif; ?>
+
+              <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
+
+                <a class="social-link mx-2" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
+                  <i class="fa fa-2x fa-instagram"></i>
+                </a>
+
+              <?php endif; ?>
+
+            </div>
+          </div>
           </aside>
 
         <?php endif; ?>
