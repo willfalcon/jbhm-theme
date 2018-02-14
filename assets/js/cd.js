@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
   video.onplay = function() {
     window.setTimeout(function() {
       video.loop = false;
-    }, 3000);
+    }, 60000);
   };
 
 
