@@ -72,7 +72,7 @@
           <?php the_title( '<h2 class="accent">', '</h2>' ); ?>
 
           <div class="cd-blog-post-tails">
-            <p><?php the_time( 'n.j.Y' ); ?></p>
+            <p class="text-uppercase"><?php the_time( 'j F Y' ); ?></p>
             <p><?php the_author(); ?></p>
             <hr class="accent">
           </div>
