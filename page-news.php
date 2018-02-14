@@ -49,7 +49,7 @@
 
             <div class="cd-blog-tails">
               <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              <p><?php the_time( 'n.j.y'); ?></p>
+              <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
             </div>
 <?php /*
             <div class="text-right">
