@@ -45,7 +45,7 @@
 
         ?>
 
-          <div class="cd-blog-desc">
+          <div class="order-md-2 cd-blog-desc">
 
             <div class="cd-blog-tails">
               <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -61,7 +61,7 @@
           </div>
 
             <?php if ( $featured_img ) : ?>
-              <a href="<?php the_permalink(); ?>">
+              <a class="order-md-1" href="<?php the_permalink(); ?>">
                 <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
               </a>
             <?php endif; ?>
@@ -82,7 +82,7 @@
     <p class="blog-nav-link right">
 
         <?php next_posts_link( 'Older Posts <i class="fa fa-caret-right accent"></i>', $query->max_num_pages ); ?>
-      
+
     </p>
 
   </div>

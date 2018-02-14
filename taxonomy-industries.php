@@ -9,6 +9,12 @@
     get_header();
   }
 
+  if ( get_field( 'limit_projects_to', $acfID ) ) {
+    $posts_per_page = get_field( 'limit_projects_to', $acfID );
+  } else {
+    $posts_per_page = -1;
+  }
+
 
   $args = array(
     'post_type' => 'project',
@@ -19,7 +25,7 @@
         'terms' => $currentTerm->slug
       )
     ),
-    'posts_per_page' => get_field( 'limit_projects_to', $acfID )
+    'posts_per_page' => $posts_per_page
   );
   $query = new WP_Query( $args );
 
