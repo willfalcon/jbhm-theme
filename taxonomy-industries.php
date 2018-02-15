@@ -55,7 +55,7 @@
 
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <?php get_template_part( '/template-parts/grid-single-project' ); ?>
+      <?php get_template_part( '/template-parts/grid-single-project', 'industry'); ?>
 
     <?php endwhile; ?>
 
