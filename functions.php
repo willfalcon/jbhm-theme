@@ -215,13 +215,13 @@ function acf_load_office_field_choices($field) {
 
   add_filter('acf/load_field/name=office_select', 'acf_load_office_field_choices');
 
-  add_filter('apto/navigation_sort_apply', 'theme_apto_navigation_sort_apply');
-  function theme_apto_navigation_sort_apply($current) {
-    global $post;
-    if($post->post_type == 'project') {
-      $current = TRUE;
-    } else {
-      $current = FALSE;
-    }
-    return $current;
-  }
+  // add_filter('apto/navigation_sort_apply', 'theme_apto_navigation_sort_apply');
+  // function theme_apto_navigation_sort_apply($current) {
+  //   global $post;
+  //   if($post->post_type == 'project') {
+  //     $current = TRUE;
+  //   } else {
+  //     $current = FALSE;
+  //   }
+  //   return $current;
+  // }

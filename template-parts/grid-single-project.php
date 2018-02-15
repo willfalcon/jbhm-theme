@@ -19,7 +19,8 @@
     ?>
 
       <a class="frontpage-gallery-item cd-grid-item tax-grid-item col-12 col-sm-6 col-md-4 col-xl-3"
-      href="<?php the_permalink(); ?>
+      href="
+        <?php the_permalink(); ?>
         <?php if ( ! is_front_page() ) : ?>
           ?tax=<?php echo $currentTerm->taxonomy; ?>&term=<?php echo $currentTerm->term_id; ?>
         <?php endif; ?>

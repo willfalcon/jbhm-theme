@@ -146,6 +146,15 @@
           </p>
 
       </div>
+    <?php else: ?>
+      <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+        <p class="blog-nav-link">
+          <?php next_post_link( '%link','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
+        </p>
+        <p class="blog-nav-link right">
+          <?php previous_post_link( '%link', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
+        </p>
+      </div>
     <?php endif; ?>
 
   <?php endwhile; else: ?>
