@@ -115,10 +115,38 @@
 
     <?php endif; ?>
 
-    <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
-      <?php previous_post_link( '<p class="blog-nav-link">%link</p>','<i class="fa fa-caret-left accent"></i> Previous Project' ); ?>
-      <?php next_post_link( '<p class="blog-nav-link right">%link</p>', 'Next Project <i class="fa fa-caret-right accent"></i>' ); ?>
-    </div>
+    <?php if ( isset( $_GET['tax'] ) && isset( $_GET['term'] ) ) : ?>
+      <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+
+        <?php
+
+          $args = array(
+            'sort_id'   =>  2110,
+            'taxonomy'  =>  $_GET['tax'],
+            'term_id'   =>  $_GET['term']
+          );
+
+          $next_post = apto_get_adjacent_post($args, FALSE);
+
+          // print_r($next_post);
+          $prev_post = apto_get_adjacent_post($args, TRUE);
+          // print_r($prev_post);
+        ?>
+          <p class="blog-nav-link">
+            <?php if ( $next_post ) : ?>
+              <a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>?tax=<?php echo $_GET['tax']; ?>&term=<?php echo $_GET['term']; ?>"><i class="fa fa-caret-left accent"></i> Previous Project</a>
+            <?php endif; ?>
+          </p>
+
+
+          <p class="blog-nav-link right">
+            <?php if ( $prev_post ) : ?>
+              <a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>?tax=<?php echo $_GET['tax']; ?>&term=<?php echo $_GET['term']; ?>">Next Project <i class="fa fa-caret-right accent"></i></a>
+            <?php endif; ?>
+          </p>
+
+      </div>
+    <?php endif; ?>
 
   <?php endwhile; else: ?>
 
