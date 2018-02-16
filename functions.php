@@ -12,7 +12,7 @@
     wp_enqueue_style( 'flickity_css', 'https://unpkg.com/flickity@2/dist/flickity.min.css');
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'component_styles', get_template_directory_uri() . '/assets/css/styles.css' );
+    wp_enqueue_style( 'component_styles', get_template_directory_uri() . '/assets/css/sass-style.css' );
 
   }
 
