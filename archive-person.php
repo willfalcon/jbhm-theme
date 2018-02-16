@@ -45,7 +45,7 @@
   <div class="page-content">
     <div class="d-flex flex-wrap align-items-center my-3">
 
-      <h2 class="accent mb-0">People</h2>
+      <h2 class="accent mb-0">Meet Our Team</h2>
 
       <div>
         <a class="btn people-filter-btn<?php if ($all) : ?> active-filter<?php endif; ?>" href="?p=All" id="filter_all">All</a>

@@ -30,9 +30,7 @@
 /* Add Theme Supports */
 
   add_theme_support( 'menus' );
-
-  /* TODO: Consider removing widget support */
-  add_theme_support( 'widgets' );
+  add_theme_support( 'title-tags' );
 
 /* Create Menu Locations */
 
