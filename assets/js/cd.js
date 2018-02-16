@@ -4,21 +4,20 @@ jQuery(document).ready(function($) {
   $('#quick_links_wrapper > ul').addClass('list-unstyled');
   $('#industry_list').hide();
 
-  //initialize Masonry plugin
-  var $industryMasonry = $('.cd-gallery').masonry({
-    itemSelector: '.cd-gallery-item',
-    columnWidth: '.cd-gallery-sizer',
-    percentPosition: true,
-    gutter: 10
-  });
+  // //initialize Masonry plugin
+  // var $industryMasonry = $('.cd-gallery').masonry({
+  //   itemSelector: '.cd-gallery-item',
+  //   columnWidth: '.cd-gallery-sizer',
+  //   percentPosition: true,
+  //   gutter: 10
+  // });
 
   var video = document.getElementById('home_video');
   if (video) {
     if ( document.documentElement.clientWidth > 900 ) {
-
-      video.src = video.dataset.srclarge;
+      video.src = video.getAttribute('data-srclarge');
     } else {
-      video.src = video.dataset.srcsmall;
+      video.src = video.getAttribute('data-srcsmall');
     }
     video.onplay = function() {
       window.setTimeout(function() {
@@ -29,10 +28,10 @@ jQuery(document).ready(function($) {
       video.src = "";
     }
   }
-  
-  $industryMasonry.imagesLoaded().progress( function() {
-    $industryMasonry.masonry('layout');
-  });
+
+  // $industryMasonry.imagesLoaded().progress( function() {
+  //   $industryMasonry.masonry('layout');
+  // });
 
   var videoHeight = $('.video-header > video').height();
   var contentHeight = $('.container-fluid').height();
