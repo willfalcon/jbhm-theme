@@ -1,0 +1,31 @@
+.no-flexbox{
+  .col {
+    float: right;
+    &-12 {
+      @extend .col;
+      width: 100%;
+    }
+    &-sm-6 {
+      @extend .col;
+      @media (min-width: 576px) {
+        width: 50%;
+      }
+    }
+    &-md-4 {
+      @extend .col;
+      @media (min-width: 768px) {
+        width: 33.333333%;
+      }
+    }
+    &-xl-3 {
+      @extend .col;
+      @media (min-width: 1200px) {
+        width: 25%;
+      }
+    }
+  }
+
+  .cd-menu #menu-main-menu {
+    width: auto;
+  }
+}
