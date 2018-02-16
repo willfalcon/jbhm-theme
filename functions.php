@@ -223,3 +223,10 @@ function acf_load_office_field_choices($field) {
   //   }
   //   return $current;
   // }
+
+  add_filter('autoptimize_filter_css_replacetag','jbhm_css_replacetag',10,1);
+  // Place autoptimize's concatenated stylesheet just before </head>,
+  // because otherwise it comes in before bootstrap's cdn-sourced tag and messes up everything.
+  function jbhm_css_replacetag($replacetag) {
+  	return array("</head>","before");
+  	}
