@@ -65,7 +65,7 @@
 
         <?php if ( get_field( 'sidebar_content' ) || have_rows( 'bid_documents' ) ) : ?>
 
-          <aside class="col-md-3 project-sidebar sticky-sidebar">
+          <aside class="col-12 col-md-4 project-sidebar sticky-sidebar">
             <div>
             <div class="page-sidebar-content">
 

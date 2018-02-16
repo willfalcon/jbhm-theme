@@ -29,47 +29,59 @@
 
 
     <div class="row news-archive">
+      <main class="col-12 col-md-9">
+        <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+        <article class="cd-blog-card">
 
-      <article class="col-12 cd-blog-card">
+          <?php
+            $featured_img = false;
+            if ( get_field( 'header_img' ) ) {
+              $featured_img = get_field( 'header_img' );
+            } elseif ( get_field( 'images' ) ) {
+              $images = get_field( 'images' );
+              $featured_img = $images[0];
+            }
 
+          ?>
+
+            <div class="order-md-2 cd-blog-desc">
+
+              <div class="cd-blog-tails">
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
+              </div>
+  <?php /*
+              <div class="text-right">
+                <a href="<?php the_permalink(); ?>" class="cd-more">
+                  More <i class="fa fa-caret-right accent"></i>
+                </a>
+              </div>
+  */ ?>
+            </div>
+
+              <?php if ( $featured_img ) : ?>
+                <a class="order-md-1" href="<?php the_permalink(); ?>">
+                  <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
+                </a>
+              <?php endif; ?>
+
+
+        </article>
+
+      <?php endwhile; ?>
+    </main>
+    <aside class="col-12 col-md-3 project-sidebar sticky-sidebar">
+      <div class="page-sidebar-content">
+        <h5>News Archives</h5>
         <?php
-          $featured_img = false;
-          if ( get_field( 'header_img' ) ) {
-            $featured_img = get_field( 'header_img' );
-          } elseif ( get_field( 'images' ) ) {
-            $images = get_field( 'images' );
-            $featured_img = $images[0];
-          }
-
+          $args = array(
+            'limit' => 12
+          );
+          wp_get_archives( $args );
         ?>
-
-          <div class="order-md-2 cd-blog-desc">
-
-            <div class="cd-blog-tails">
-              <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-              <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
-            </div>
-<?php /*
-            <div class="text-right">
-              <a href="<?php the_permalink(); ?>" class="cd-more">
-                More <i class="fa fa-caret-right accent"></i>
-              </a>
-            </div>
-*/ ?>
-          </div>
-
-            <?php if ( $featured_img ) : ?>
-              <a class="order-md-1" href="<?php the_permalink(); ?>">
-                <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
-              </a>
-            <?php endif; ?>
-
-
-      </article>
-
-    <?php endwhile; ?>
+      </div>
+    </aside>
   </div>
 
 
