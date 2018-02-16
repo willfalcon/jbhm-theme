@@ -32,7 +32,7 @@
                 $link = get_sub_field( 'map_link' );
               ?>
 
-              <div class="office">
+              <div class="office clearfix">
                 <h2 class="office-link-header" id="office_<?php the_row_index(); ?>"><?php the_sub_field( 'title' ); ?></h2>
                 <img class="img-fluid" src="<?php echo $img['sizes']['medium_large']; ?>" alt="<?php $img['alt']; ?>" />
                 <div class="office-info">
