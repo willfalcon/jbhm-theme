@@ -202,7 +202,7 @@ function acf_load_office_field_choices($field) {
     $field['choices'] = array();
 
     while ( have_rows('offices', 'post_1465') ) : the_row();
-      $value = get_row_index();
+      $value = get_sub_field('title');
       $title = get_sub_field('title');
       $field['choices'][ $value ] = $title;
 
