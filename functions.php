@@ -30,7 +30,7 @@
 /* Add Theme Supports */
 
   add_theme_support( 'menus' );
-  add_theme_support( 'title-tags' );
+  add_theme_support( 'title-tag' );
 
 /* Create Menu Locations */
 
