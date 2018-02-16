@@ -7,7 +7,7 @@
   } else {
     $images = get_field( 'gallery' );
     $firstImg = $images[0];
-    $headerImg = $firstImg['url'];
+    $headerImg = $firstImg['sizes']['large'];
     if ( get_field( 'header_height' ) ) {
       $headerHeight = get_field( 'header_height' );
     } elseif ( $firstImg['height'] < 450 ) {
