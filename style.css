@@ -323,6 +323,8 @@ body {
 .office-info {
   margin-top: 22px;
   margin-bottom: 50px;
+  float: left;
+  width: 75%;
 }
 .office-info p {
   margin: 0;
@@ -348,11 +350,19 @@ body {
   color: #4A4A4A;
 }
 
-.office iframe {
-  max-width: 100%;
-  width: 400px;
-  height: 300px;
+.map-link-wrap {
+  float: right;
+  text-align: right;
+  width: 25%;
+  margin-top: 25px;
+
 }
+
+a.map-link {
+  background-color: #9B9B9B;
+  color: white;
+}
+
 .bid-docs {
   background-color: rgba(216, 216, 216, .5);
   padding: 25px 22px;

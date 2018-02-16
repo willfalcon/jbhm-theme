@@ -29,31 +29,31 @@
 
               <?php
                 $img = get_sub_field( 'map_image' );
-                $address = get_sub_field( 'address' );
-                $city = get_sub_field( 'city' );
-                $state = get_sub_field( 'state' );
-                $zip = get_sub_field( 'zip_code' );
+                $link = get_sub_field( 'map_link' );
               ?>
 
               <div class="office">
                 <h2 class="office-link-header" id="office_<?php the_row_index(); ?>"><?php the_sub_field( 'title' ); ?></h2>
-                <iframe
-                  frameborder="0"
-                  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDy5M85G3Ima55nYGas8G4sf5ZDSP6zU9M
-                    &q=<?php echo cd_map_link( $address, $city, $state, $zip ); ?>" allowfullscreen>
-                </iframe>
+                <img class="img-fluid" src="<?php echo $img['sizes']['medium_large']; ?>" alt="<?php $img['alt']; ?>" />
                 <div class="office-info">
                   <p>
                     <?php the_sub_field( 'address' ); ?>
                   </p>
                   <p>
-                    <?php the_sub_field( 'city' ); ?>, <?php the_sub_field( 'state' ); ?> <?php the_sub_field( 'zip_code' ); ?>
+                    <?php the_sub_field( 'address_2' ); ?>
                   </p>
                   <p>
                     <a href="tel:<?php the_sub_field( 'phone' ); ?>">
                       <?php the_sub_field( 'phone' ); ?>
                     </a>
                   </p>
+                </div>
+                <div class="map-link-wrap">
+                  <?php if ( $link ) : ?>
+                    <a class="btn map-link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
+                      <?php echo $link['title']; ?>
+                    </a>
+                  <?php endif; ?>
                 </div>
               </div>
 
