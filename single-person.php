@@ -9,7 +9,7 @@
 
         <?php if ( get_field( 'headshot' ) ) : ?>
           <?php $headshot = get_field( 'headshot' ); ?>
-            <img class="img-fluid" src="<?php echo $headshot['url']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
+          <img class="img-fluid" src="<?php echo $headshot['url']; ?>" alt="<?php echo $headshot['alt']; ?>"/>
         <?php endif; ?>
 
         <div class="light-font d-none d-md-block">
