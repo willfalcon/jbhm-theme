@@ -337,7 +337,7 @@ body {
   font-size: 1.5rem;
 }
 
-.office-link-header::before {
+.office::before {
   display: block;
   content: " ";
   margin-top: -130px;
