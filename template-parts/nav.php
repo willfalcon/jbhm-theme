@@ -10,8 +10,10 @@
     <?php endif; ?>
   </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
-    <i id="cd_toggle" class="fa fa-bars"></i>
+  <button id="mobile_toggler" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_menu" aria-controls="main_menu" aria-expanded="false" aria-label="Toggle Main Menu">
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
 
   <div class="collapse navbar-collapse cd-menu text-right text-lg-left" id="main_menu">
