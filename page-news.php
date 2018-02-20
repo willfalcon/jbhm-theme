@@ -61,10 +61,14 @@
 
         </article>
 
-      <?php endwhile; ?>
+      <?php endwhile; wp_reset_postdata(); ?>
     </main>
     <aside class="col-12 col-md-3 project-sidebar sticky-sidebar">
       <div class="page-sidebar-content">
+        <?php while ( have_posts() ) : the_post(); ?>
+          <h5>Feature</h5>
+          <?php the_content(); ?>  
+        <?php endwhile; ?>
         <h5>News Archives</h5>
         <?php
           $args = array(

@@ -205,11 +205,17 @@ body {
   position: sticky;
 }
 
+.sticky-sidebar iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (min-width: 768px) {
   .sticky-sidebar div {
     top: 130px;
   }
 }
+
 
 /*---------------    Breadcrumbs     ---------------*/
 .breadcrumb {
