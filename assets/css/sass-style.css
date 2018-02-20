@@ -37,8 +37,8 @@
     background-color: rgba(89, 89, 89, 0.75);
     position: absolute;
     bottom: 0;
-    -webkit-transform: translateY(60px);
-            transform: translateY(60px);
+    -webkit-transform: translateY(62px);
+            transform: translateY(62px);
     padding: .75rem .75rem;
     left: 5px;
     width: calc(100% - 10px);
