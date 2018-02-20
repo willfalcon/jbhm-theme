@@ -48,6 +48,16 @@
 
           <?php endif; ?>
 
+          <?php if ( get_field( 'linkedin_url', 'option' ) ) : ?>
+
+            <a class="social-link" href="<?php the_field( 'linkedin_url', 'option' ); ?>" target="_blank">
+              <span class="my-0 fa-stack fa-lg social-icon">
+                <i class="fa fa-2x fa-linkedin fa-stack-2x"></i>
+              </span>
+            </a>
+
+          <?php endif; ?>
+
           <?php if ( get_field ( 'contact_phone', 'option' ) ) : ?>
 
             <a class="my-md-0" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">

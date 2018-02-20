@@ -30,7 +30,7 @@
                 $link = get_sub_field( 'map_link' );
               ?>
 
-              <div class="office clearfix" id="office_<?php the_sub_field( 'title' ); ?>">
+              <div class="office" id="office_<?php the_sub_field( 'title' ); ?>">
                 <img class="img-fluid" src="<?php echo $img['sizes']['medium_large']; ?>" alt="<?php $img['alt']; ?>" />
                 <h2 class="office-link-header"><?php the_sub_field( 'title' ); ?></h2>
                 <div class="office-info">
@@ -45,14 +45,13 @@
                       <?php the_sub_field( 'phone' ); ?>
                     </a>
                   </p>
-                </div>
-                <div class="map-link-wrap">
                   <?php if ( $link ) : ?>
                     <a class="btn map-link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
                       <?php echo $link['title']; ?>
                     </a>
                   <?php endif; ?>
                 </div>
+                
               </div>
 
             <?php endwhile; ?>
@@ -110,6 +109,14 @@
 
                   <a class="social-link mx-2" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
                     <i class="fa fa-2x fa-instagram"></i>
+                  </a>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'linkedin_url', 'option' ) ) : ?>
+
+                  <a class="social-link mx-2" href="<?php the_field( 'linkedin_url', 'option' ); ?>" target="_blank">
+                    <i class="fa fa-2x fa-linkedin"></i>
                   </a>
 
                 <?php endif; ?>

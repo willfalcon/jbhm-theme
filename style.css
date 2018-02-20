@@ -328,8 +328,6 @@ body {
 .office-info {
   margin-top: 22px;
   margin-bottom: 50px;
-  float: left;
-  width: 75%;
 }
 .office-info p {
   margin: 0;
@@ -356,11 +354,7 @@ body {
 }
 
 .map-link-wrap {
-  float: right;
-  text-align: right;
-  width: 25%;
   margin-top: 25px;
-
 }
 
 a.map-link {
