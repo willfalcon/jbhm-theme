@@ -1,28 +1,109 @@
-<?php get_header(); ?>
+<?php
 
-<div class="row mt-2">
+    get_header();
 
-  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php $img = get_the_post_thumbnail();  ?>
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-    <div class="col-6 col-md-4 col-lg-3 project-grid-item-container">
-      <a href="<?php the_permalink(); ?>">
+  $args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 12,
+    'paged' => $paged
+  );
+  $query = new WP_Query( $args );
+?>
 
-        <div class="project-grid-item" style="background-image: url(<?php echo $img['sizes']['thumbnail']; ?>)">
+<?php if ( have_posts() ) : ?>
 
-          <div class="industry-info">
-            <h4><?php the_title(); ?></h4>
-            <p class="cd-more">More  <i class="fa fa-caret-right fa-lg accent"></i></p>
-          </div>
+  <main <?php post_class(); ?>>
 
-        </div>
 
-      </a>
+    <div class="row">
+      <div class="col">
+        <h2 class="project-title accent py-3 m-0 text-center">News</h2>
+      </div>
     </div>
 
-  <?php endwhile; endif; ?>
 
-</div>
+    <div class="row news-archive">
+      <main class="col-12 col-md-9">
+        <?php while ( have_posts() ) : the_post(); ?>
+
+        <article class="cd-blog-card">
+
+          <?php
+            $featured_img = false;
+            if ( get_field( 'header_img' ) ) {
+              $featured_img = get_field( 'header_img' );
+            } elseif ( get_field( 'images' ) ) {
+              $images = get_field( 'images' );
+              $featured_img = $images[0];
+            }
+
+          ?>
+
+            <div class="order-md-2 cd-blog-desc">
+
+              <div class="cd-blog-tails">
+                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
+              </div>
+  <?php /*
+              <div class="text-right">
+                <a href="<?php the_permalink(); ?>" class="cd-more">
+                  More <i class="fa fa-caret-right accent"></i>
+                </a>
+              </div>
+  */ ?>
+            </div>
+
+              <?php if ( $featured_img ) : ?>
+                <a class="order-md-1" href="<?php the_permalink(); ?>">
+                  <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
+                </a>
+              <?php endif; ?>
+
+
+        </article>
+
+      <?php endwhile; ?>
+    </main>
+    <aside class="col-12 col-md-3 project-sidebar sticky-sidebar">
+      <div class="page-sidebar-content">
+        <h5>News Archives</h5>
+        <?php
+          $args = array(
+            'limit' => 12
+          );
+          wp_get_archives( $args );
+        ?>
+      </div>
+    </aside>
+  </div>
+
+
+  <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+
+    <p class="blog-nav-link">
+        <?php previous_posts_link( '<i class="fa fa-caret-left accent"></i> Newer Posts' ); ?>
+
+    </p>
+    <p class="blog-nav-link right">
+
+        <?php next_posts_link( 'Older Posts <i class="fa fa-caret-right accent"></i>', $query->max_num_pages ); ?>
+
+    </p>
+
+  </div>
+
+
+</main>
+
+<?php else: ?>
+
+  <h3 class="mb-4">Sorry, nothing here!</h3>
+
+<?php endif; ?>
+
 
 <?php get_footer(); ?>

@@ -203,7 +203,12 @@ body {
 .sticky-sidebar div {
   position: -webkit-sticky;
   position: sticky;
-  top: 130px;
+}
+
+@media (min-width: 768px) {
+  .sticky-sidebar div {
+    top: 130px;
+  }
 }
 
 /*---------------    Breadcrumbs     ---------------*/

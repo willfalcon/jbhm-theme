@@ -45,27 +45,19 @@
 
           ?>
 
-            <div class="order-md-2 cd-blog-desc">
+          <div class="order-md-2 cd-blog-desc">
 
-              <div class="cd-blog-tails">
-                <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
-              </div>
-  <?php /*
-              <div class="text-right">
-                <a href="<?php the_permalink(); ?>" class="cd-more">
-                  More <i class="fa fa-caret-right accent"></i>
-                </a>
-              </div>
-  */ ?>
+            <div class="cd-blog-tails">
+              <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+              <p class="text-uppercase"><?php the_time( 'j F Y'); ?></p>
             </div>
+          </div>
 
-              <?php if ( $featured_img ) : ?>
-                <a class="order-md-1" href="<?php the_permalink(); ?>">
-                  <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
-                </a>
-              <?php endif; ?>
-
+          <?php if ( $featured_img ) : ?>
+            <a class="order-md-1" href="<?php the_permalink(); ?>">
+              <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
+            </a>
+          <?php endif; ?>
 
         </article>
 

@@ -6,8 +6,6 @@
   }
 ?>
 
-
-
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
       <div class="row page-content">
@@ -67,57 +65,57 @@
 
           <aside class="col-12 col-md-4 project-sidebar sticky-sidebar">
             <div>
-            <div class="page-sidebar-content">
+              <div class="page-sidebar-content">
 
-              <?php if ( have_rows( 'bid_documents' ) ) : ?>
+                <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
-              <h5>Bid Documents</h5>
+                <h5>Bid Documents</h5>
 
-              <?php while ( have_rows( 'bid_documents' ) ) : the_row( 'bid_documents' ); ?>
+                <?php while ( have_rows( 'bid_documents' ) ) : the_row( 'bid_documents' ); ?>
 
-                <a class="accent w-100 d-block" href="<?php the_sub_field( 'link' ); ?>" target="_blank">
-                  <?php the_sub_field( 'label' ); ?> <i class="fa fa-chevron-right accent"></i>
-                </a>
+                  <a class="accent w-100 d-block" href="<?php the_sub_field( 'link' ); ?>" target="_blank">
+                    <?php the_sub_field( 'label' ); ?> <i class="fa fa-chevron-right accent"></i>
+                  </a>
 
-              <?php endwhile; ?>
-            <?php endif; ?>
+                <?php endwhile; ?>
+              <?php endif; ?>
 
-            <?php if ( get_field( 'sidebar_content' ) ) : ?>
-              <div class="sidebar-content-wrap">
-                <?php the_field( 'sidebar_content' ); ?>
+              <?php if ( get_field( 'sidebar_content' ) ) : ?>
+                <div class="sidebar-content-wrap">
+                  <?php the_field( 'sidebar_content' ); ?>
+                </div>
+              <?php endif; ?>
+
               </div>
-            <?php endif; ?>
 
+              <div class="text-center mt-3">
+
+                <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
+
+                  <a class="social-link mx-2" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
+                    <i class="fa fa-2x fa-facebook"></i>
+                  </a>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'twitter_url', 'option' ) ) : ?>
+
+                  <a class="social-link mx-2" href="<?php the_field( 'twitter_url', 'option' ); ?>" target="_blank">
+                    <i class="fa fa-2x fa-twitter"></i>
+                  </a>
+
+                <?php endif; ?>
+
+                <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
+
+                  <a class="social-link mx-2" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
+                    <i class="fa fa-2x fa-instagram"></i>
+                  </a>
+
+                <?php endif; ?>
+
+              </div>
             </div>
-
-            <div class="text-center mt-3">
-
-              <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
-
-                <a class="social-link mx-2" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
-                  <i class="fa fa-2x fa-facebook"></i>
-                </a>
-
-              <?php endif; ?>
-
-              <?php if ( get_field( 'twitter_url', 'option' ) ) : ?>
-
-                <a class="social-link mx-2" href="<?php the_field( 'twitter_url', 'option' ); ?>" target="_blank">
-                  <i class="fa fa-2x fa-twitter"></i>
-                </a>
-
-              <?php endif; ?>
-
-              <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
-
-                <a class="social-link mx-2" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
-                  <i class="fa fa-2x fa-instagram"></i>
-                </a>
-
-              <?php endif; ?>
-
-            </div>
-          </div>
           </aside>
 
         <?php endif; ?>
