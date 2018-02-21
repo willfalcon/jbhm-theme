@@ -45,7 +45,13 @@
 
           ?>
 
-          <div class="order-md-2 cd-blog-desc">
+          <?php if ( $featured_img ) : ?>
+            <a class="blog-thumbnail-wrap" href="<?php the_permalink(); ?>">
+              <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
+            </a>
+          <?php endif; ?>
+
+          <div class="cd-blog-desc">
 
             <div class="cd-blog-tails">
               <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -53,11 +59,7 @@
             </div>
           </div>
 
-          <?php if ( $featured_img ) : ?>
-            <a class="order-md-1" href="<?php the_permalink(); ?>">
-              <img class="blog-thumbnail-img" src="<?php echo $featured_img['sizes']['thumbnail']; ?>" alt="<?php echo $featured_img['alt']; ?>"/>
-            </a>
-          <?php endif; ?>
+
 
         </article>
 
@@ -66,10 +68,10 @@
     <aside class="col-12 col-md-3 project-sidebar sticky-sidebar">
       <div class="page-sidebar-content">
         <?php while ( have_posts() ) : the_post(); ?>
-          <h5>Feature</h5>
-          <?php the_content(); ?>  
+          <h5 class="text-center text-md-left">Feature</h5>
+          <?php the_content(); ?>
         <?php endwhile; ?>
-        <h5>News Archives</h5>
+        <h5 class="text-center text-md-left">News Archives</h5>
         <?php
           $args = array(
             'limit' => 12
