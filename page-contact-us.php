@@ -51,7 +51,7 @@
                     </a>
                   <?php endif; ?>
                 </div>
-                
+
               </div>
 
             <?php endwhile; ?>
@@ -68,7 +68,7 @@
 
                 <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
-                <h5>Bid Documents</h5>
+                <h5>Online Planroom</h5>
 
                 <?php while ( have_rows( 'bid_documents' ) ) : the_row( 'bid_documents' ); ?>
 

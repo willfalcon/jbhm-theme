@@ -14,6 +14,13 @@
 
         <div class="light-font d-none d-md-block">
 
+          <?php if ( get_field( 'office_select' ) ) : ?>
+            <?php $office = get_field( 'office_select' );?>
+            <a class="d-block" href="<?php echo home_url(); ?>/contact-us#office_<?php echo $office['value']; ?>">
+              <strong>Office: </strong><?php echo $office['label']; ?></p>
+            </a>
+          <?php endif; ?>
+
           <?php if ( get_field( 'email' ) ) : ?>
             <a class="d-block" href="mailto:<?php the_field( 'email' ); ?>"><?php the_field( 'email' ); ?></a>
           <?php endif; ?>
@@ -22,12 +29,6 @@
             <a class="d-block" href="tel:<?php the_field( 'phone', false, false ); ?>"><?php the_field( 'phone' ); ?></a>
           <?php endif; ?>
 
-          <?php if ( get_field( 'office_select' ) ) : ?>
-            <?php $office = get_field( 'office_select' );?>
-            <a href="<?php echo home_url(); ?>/contact-us#office_<?php echo $office['value']; ?>">
-              <strong>Office: </strong><?php echo $office['label']; ?></p>
-            </a>
-          <?php endif; ?>
           <hr class="accent">
 
         </div>
@@ -63,19 +64,19 @@
 
         <div class="light-font d-md-none">
 
+          <?php if ( get_field( 'office_select' ) ) : ?>
+            <?php $office = get_field( 'office_select' );?>
+            <a href="<?php echo home_url(); ?>/contact-us#office_<?php echo $office['value']; ?>">
+              <strong>Office: </strong><?php echo $office['label']; ?></p>
+            </a>
+          <?php endif; ?>
+
           <?php if ( get_field( 'email' ) ) : ?>
             <a class="d-block" href="mailto:<?php the_field( 'email' ); ?>"><?php the_field( 'email' ); ?></a>
           <?php endif; ?>
 
           <?php if ( get_field( 'phone' ) ) : ?>
             <a class="d-block" href="tel:<?php the_field( 'phone', false, false ); ?>"><?php the_field( 'phone' ); ?></a>
-          <?php endif; ?>
-
-          <?php if ( get_field( 'office_select' ) ) : ?>
-            <?php $office = get_field( 'office_select' );?>
-            <a href="<?php echo home_url(); ?>/contact-us#office_<?php echo $office['value']; ?>">
-              <strong>Office: </strong><?php echo $office['label']; ?></p>
-            </a>
           <?php endif; ?>
 
         </div>
