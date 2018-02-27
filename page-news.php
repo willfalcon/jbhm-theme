@@ -65,12 +65,31 @@
 
       <?php endwhile; wp_reset_postdata(); ?>
     </main>
-    <aside class="col-12 col-md-3 project-sidebar sticky-sidebar">
+    <aside class="col-12 col-md-3 project-sidebar">
       <div class="page-sidebar-content">
-        <?php while ( have_posts() ) : the_post(); ?>
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <h5 class="text-center text-md-left">Feature</h5>
           <?php the_content(); ?>
+          <hr class="accent">
+        <?php endwhile; endif;?>
+
+        <?php if ( have_rows( 'books', 'option' ) ) : while ( have_rows( 'books', 'option' ) ) : the_row(); ?>
+
+          <?php $img = get_sub_field( 'thumbnail' ); ?>
+          <div class="design-book clearfix my-3">
+
+            <a href="<?php the_sub_field( 'link' ); ?>" target="_blank">
+              <img class="img-fluid w-50 float-left pr-2" src="<?php echo $img['sizes']['thumbnail']; ?>" alt="<?php echo $img['alt']; ?>" />
+            </a>
+            <a href="<?php the_sub_field( 'link' ); ?>" target="_blank"><?php the_sub_field( 'title' ); ?></a>
+
+          </div>
+
         <?php endwhile; ?>
+        <hr class="accent">
+
+        <?php endif; ?>
+
         <h5 class="text-center text-md-left">News Archives</h5>
         <?php
           $args = array(
