@@ -336,8 +336,12 @@ body {
 /*-----------------------------------------------------*/
 /*---------------   Contact_Us_Page     ---------------*/
 /*-----------------------------------------------------*/
+.office-link-header {
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
 .office-info {
-  margin-top: 22px;
+  /* margin-top: 15px; */
   margin-bottom: 50px;
 }
 .office-info p {
@@ -455,9 +459,9 @@ a.map-link {
 }
 
 .sidebar-content-wrap {
-    border-top: 1px #9B9B9B solid;
+    /* border-top: 1px #9B9B9B solid; */
     margin-top: 1rem;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 }
 
 .sidebar-content-wrap p {

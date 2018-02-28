@@ -66,6 +66,20 @@
             <div>
               <div class="page-sidebar-content">
 
+                <?php if ( get_field( 'contact_email', 'option' ) ) : ?>
+                  <a class="d-block w-100" href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
+                    <?php the_field( 'contact_email', 'option' ); ?>
+                  </a>
+                <?php endif; ?>
+
+                <?php if ( get_field( 'contact_phone', 'option' ) ) : ?>
+                  <a class="d-block w-100" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
+                    <?php the_field( 'contact_phone', 'option' ); ?>
+                  </a>
+                <?php endif; ?>
+
+                <hr class="accent">
+
                 <?php if ( have_rows( 'bid_documents' ) ) : ?>
 
                 <h5>Online Planroom</h5>
@@ -77,6 +91,7 @@
                   </a>
 
                 <?php endwhile; ?>
+                <hr class="accent">
               <?php endif; ?>
 
               <?php if ( get_field( 'sidebar_content' ) ) : ?>
