@@ -10,7 +10,7 @@
   <div class="page-content">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-    <?php the_title( '<h2 class="accent my-4">', '</h2>' ); ?>
+    <h2 class="accent my-4 page-title text-center"><?php the_title(); ?></h2>
 
     <?php the_content() ?>
 

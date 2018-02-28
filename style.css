@@ -321,8 +321,13 @@ body {
 /*---------------   Page     ---------------*/
 /*------------------------------------------*/
 
+.page-title {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
 .page-content {
-  width: 900px;
+  width: 1000px;
   max-width: 100%;
   margin: 0 auto;
   padding: 0 15px;
@@ -914,7 +919,7 @@ span.award-name {
 }
 
 .cd-blog-post-wrap {
-  width:600px;
+  width:800px;
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;

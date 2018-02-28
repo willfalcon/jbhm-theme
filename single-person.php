@@ -26,7 +26,7 @@
           <?php endif; ?>
 
           <?php if ( get_field( 'phone' ) ) : ?>
-            <a class="d-block" href="tel:<?php the_field( 'phone', false, false ); ?>"><?php the_field( 'phone' ); ?></a>
+            <a class="d-block" style="margin-top: -18px;" href="tel:<?php the_field( 'phone', false, false ); ?>"><?php the_field( 'phone' ); ?></a>
           <?php endif; ?>
 
           <hr class="accent">

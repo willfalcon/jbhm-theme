@@ -43,11 +43,11 @@
 
 <div class="row">
   <div class="page-content">
-    <div class="d-flex flex-wrap align-items-center my-3">
+    <div class="d-flex flex-wrap align-items-center justify-content-center my-3">
 
-      <h2 class="accent mb-0">Meet Our Team</h2>
+      <h2 class="accent w-100 text-center page-title">Meet Our Team</h2>
 
-      <div>
+      <div class="w-100 d-flex flex-wrap align-items-center justify-content-center">
         <a class="btn people-filter-btn<?php if ($all) : ?> active-filter<?php endif; ?>" href="?p=All" id="filter_all">All</a>
         <a class="btn people-filter-btn<?php if ($principals) : ?> active-filter<?php endif; ?>" href="?p=Principals" id="filter_principals">Principals</a>
         <a class="btn people-filter-btn<?php if ($team) : ?> active-filter<?php endif; ?>" href="?p=Team" id="filter_team">Team</a>

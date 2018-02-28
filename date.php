@@ -20,7 +20,7 @@
 
     <div class="row">
       <div class="col">
-        <h2 class="project-title accent py-3 m-0 text-center">Archive</h2>
+        <a href="<?php echo home_url(); ?>/news"><h2 class="project-title accent py-3 m-0 text-center">News</h2></a>
       </div>
     </div>
 
