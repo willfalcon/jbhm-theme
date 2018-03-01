@@ -97,6 +97,42 @@
           );
           wp_get_archives( $args );
         ?>
+
+      </div>
+      <div class="text-center mt-3">
+
+        <?php if ( get_field( 'facebook_url', 'option' ) ) : ?>
+
+          <a class="social-link mx-2" href="<?php the_field( 'facebook_url', 'option' ); ?>" target="_blank">
+            <i class="fa fa-2x fa-facebook"></i>
+          </a>
+
+        <?php endif; ?>
+
+        <?php if ( get_field( 'twitter_url', 'option' ) ) : ?>
+
+          <a class="social-link mx-2" href="<?php the_field( 'twitter_url', 'option' ); ?>" target="_blank">
+            <i class="fa fa-2x fa-twitter"></i>
+          </a>
+
+        <?php endif; ?>
+
+        <?php if ( get_field( 'instagram_url', 'option' ) ) : ?>
+
+          <a class="social-link mx-2" href="<?php the_field( 'instagram_url', 'option' ); ?>" target="_blank">
+            <i class="fa fa-2x fa-instagram"></i>
+          </a>
+
+        <?php endif; ?>
+
+        <?php if ( get_field( 'linkedin_url', 'option' ) ) : ?>
+
+          <a class="social-link mx-2" href="<?php the_field( 'linkedin_url', 'option' ); ?>" target="_blank">
+            <i class="fa fa-2x fa-linkedin"></i>
+          </a>
+
+        <?php endif; ?>
+
       </div>
     </aside>
   </div>
