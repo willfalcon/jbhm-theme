@@ -138,6 +138,9 @@
 .h-300 {
   height: 300px; }
 
+.mwidth-100 {
+  max-width: 100%; }
+
 .cd-grid-item {
   display: -webkit-box;
   display: -ms-flexbox;

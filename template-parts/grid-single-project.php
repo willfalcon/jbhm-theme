@@ -32,7 +32,7 @@
 
         <div class="frontpage-project-info<?php if ( ! $location ) : ?> no-location<?php endif; ?>">
 
-          <div class="text-left h-size-adjust align-self-start">
+          <div class="text-left h-size-adjust align-self-start mwidth-100">
             <h3><?php the_title(); ?></h3>
             <?php if ( $location ) : ?>
               <hr class="accent">
