@@ -67,12 +67,14 @@
               <div class="page-sidebar-content">
 
                 <?php if ( get_field( 'contact_email', 'option' ) ) : ?>
+                  <p class="m-0"><b>Email</b></p>
                   <a class="d-block w-100" href="mailto:<?php the_field( 'contact_email', 'option' ); ?>">
                     <?php the_field( 'contact_email', 'option' ); ?>
                   </a>
                 <?php endif; ?>
 
                 <?php if ( get_field( 'contact_phone', 'option' ) ) : ?>
+                  <p class="mb-0 mt-1"><b>Phone</b></p>
                   <a class="d-block w-100" href="tel:<?php the_field( 'contact_phone', 'option' ); ?>">
                     <?php the_field( 'contact_phone', 'option' ); ?>
                   </a>
