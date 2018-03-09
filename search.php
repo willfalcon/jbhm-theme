@@ -15,7 +15,7 @@ $search = new WP_Query( $search_query );
 
   <?php if ( have_posts() ) : ?>
 
-    <h2 class="mt-3 accent">Search results for "<?php echo $search_query['s']; ?>"</h2>
+    <h2 class="mt-3 accent">Search results for "<span id="searchQuery"><?php echo $search_query['s']; ?></span>"</h2>
 
     <?php while ( have_posts() ) : the_post(); ?>
 
