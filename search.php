@@ -28,11 +28,27 @@ $search = new WP_Query( $search_query );
       </div>
     </div>
 
+
+
   <?php endwhile; else: ?>
 
     <h2 class="mt-3 accent">No search results for "<?php echo $search_query['s']; ?>"</h2>
 
   <?php endif; ?>
+
+  <div class="cd-blog-nav project-content-wrap mt-5 mb-4">
+
+    <p class="blog-nav-link">
+        <?php previous_posts_link( '<i class="fa fa-caret-left accent"></i> Previous Page' ); ?>
+
+    </p>
+    <p class="blog-nav-link right">
+
+        <?php next_posts_link( 'Next Page <i class="fa fa-caret-right accent"></i>' ); ?>
+
+    </p>
+
+  </div>
 
 </div>
 
