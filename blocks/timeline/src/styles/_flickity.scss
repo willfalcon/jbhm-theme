@@ -1,0 +1,18 @@
+.flickity-prev-next-button {
+  background: transparent;
+  
+  @include responsive {
+    width: 70px;
+    height: 70px;
+  }
+
+  &.previous {
+    left: 0;
+  }
+  &.next {
+    right: 0;
+  }
+  svg {
+    fill: $green;
+  }
+}

@@ -1,0 +1,22 @@
+
+.timeline-label {
+  text-align: center;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $light;
+  margin-top: 40px;
+  &--desktop {
+    @extend .timeline-label;
+    display: none;
+    @include responsive {
+      display: block;
+    }
+  }
+  &--mobile {
+    @extend .timeline-label;
+    display: block;
+    @include responsive {
+      display: none;
+    }
+  }
+}

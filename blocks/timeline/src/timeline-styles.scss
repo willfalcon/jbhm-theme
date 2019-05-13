@@ -1,0 +1,52 @@
+$light: #909090;
+$green: #6BA443;
+$dark: #4B4B4B;
+$black: #353535;
+
+$break: 768px;
+
+@mixin responsive($breakpoint: $break) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@import 'styles/timeline-label';
+
+.timeline-wrap {
+  position: relative;
+
+  padding-top: 20px;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(to right, rgba($green, 0), rgba($green, 1) 10%, rgba($green, 1) 90%, rgba($green, 0) 100%);
+    position: relative;
+    top: 15px;
+  }
+
+}
+
+@import 'styles/stop';
+
+.timeline {
+  
+  width: 100%;
+  padding: 0;
+  list-style: none;
+
+  
+  @import 'styles/event-dots';
+  @import 'styles/flickity';
+
+  @import 'styles/events';
+
+}
+
+@supports (display: grid) {
+  @import 'styles/grid/grid';
+}

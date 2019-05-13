@@ -1,0 +1,19 @@
+.timeline {
+  .stop {
+    @include responsive {
+      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-rows: auto calc(33vw * 2 / 3) auto;
+    }
+    &__button {
+      grid-row: 1 / 2;
+    }
+    &__image-wrap {
+      grid-row: 2 / 3;
+      height: 100%;
+    }
+    .events {
+      grid-row: 3 / 4;
+    }
+  }
+}

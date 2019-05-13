@@ -1,0 +1,42 @@
+.events {
+  list-style: none;
+  padding: 0;
+  width: 75%;
+  margin: 30px auto;
+  @include responsive {
+    width: 200%;
+    opacity: 0;
+    transition: .25s;
+    transform: translateX(-50%);
+    left: 50%;
+    position: relative;
+  }
+}
+
+.stop.is-selected {
+  .events {
+    opacity: 1;
+  }
+}
+
+.event {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid $green;
+  padding: 10px 0;
+  button {
+    color: rgba($black, .5);
+    background: transparent;
+    border: 0;
+    text-align: left;
+    &:focus {
+      outline: none;
+    }
+  }
+  &.active {
+    button {
+      color: rgba($black, 1);
+    }
+  }
+}

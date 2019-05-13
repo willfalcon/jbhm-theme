@@ -13,7 +13,7 @@
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'component_styles', get_template_directory_uri() . '/assets/css/sass-style.css' );
-
+    wp_enqueue_Style( '2.0_styles', get_template_directory_uri() . '/dist/main.min.css' );
   }
 
   function cd_theme_scripts() {
@@ -71,21 +71,21 @@
 
 /* Setup ACF */
 
-  add_filter('acf/settings/path', 'my_acf_settings_path');
+  // add_filter('acf/settings/path', 'my_acf_settings_path');
 
-  function my_acf_settings_path( $path ) {
-      $path = get_stylesheet_directory() . '/inc/acf/';
-      return $path;
-  }
+  // function my_acf_settings_path( $path ) {
+  //     $path = get_stylesheet_directory() . '/inc/acf/';
+  //     return $path;
+  // }
 
-  add_filter('acf/settings/dir', 'my_acf_settings_dir');
+  // add_filter('acf/settings/dir', 'my_acf_settings_dir');
 
-  function my_acf_settings_dir( $dir ) {
-      $dir = get_stylesheet_directory_uri() . '/inc/acf/';
-      return $dir;
-  }
+  // function my_acf_settings_dir( $dir ) {
+  //     $dir = get_stylesheet_directory_uri() . '/inc/acf/';
+  //     return $dir;
+  // }
 
-  include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
+  // include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
   acf_add_options_page(
     array(
@@ -229,4 +229,49 @@ function acf_load_office_field_choices($field) {
   // because otherwise it comes in before bootstrap's cdn-sourced tag and messes up everything.
   function jbhm_css_replacetag($replacetag) {
   	return array("</head>","before");
-  	}
+  }
+
+
+    // Custom ACF Blocks
+
+    function add_block_category( $categories, $post ) {
+      return array_merge(
+        $categories,
+        array(
+          array(
+            'slug' => 'jbhm-blocks',
+            'title' => 'JBHM Custom Blocks',
+          ),
+        )
+      );
+    }
+    add_filter( 'block_categories', 'add_block_category', 10, 2);
+
+    function register_acf_blocks() {
+      acf_register_block(array(
+          'name'              => 'box-content',
+          'title'             => 'Box Content',
+          'description'       => 'A block of content in a box with a dark background.',
+          'render_template'   => 'blocks/box-content.php',
+          'category'          => 'jbhm-blocks',
+          'icon'              => 'admin-comments',
+          'keywords'          => array( 'box', 'content', 'custom', 'jbhm' ),
+      ));
+
+       acf_register_block_type(array(
+        'name'              => 'timeline',
+        'title'             => 'Timeline',
+        'description'       => 'Custom Timeline block.',
+        'render_template'   => 'blocks/timeline/timeline.php',
+        'category'          => 'jbhm-blocks',
+        'icon'              => 'admin-comments',
+        'keywords'          => array( 'timeline', 'history', 'custom', 'jbhm' ),
+        'enqueue_script' => get_template_directory_uri() . '/blocks/timeline/dist/timeline.js',
+        'enqueue_style' => get_template_directory_uri() . '/blocks/timeline/dist/timeline-styles.css'
+      ));
+    }
+
+    // Check if function exists and hook into setup.
+    if( function_exists('acf_register_block') ) {
+      add_action('acf/init', 'register_acf_blocks');
+    }
