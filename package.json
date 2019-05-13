@@ -1,6 +1,6 @@
 {
   "name": "jbhm",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Custom Theme for JBHM Architecture built by Creative Distillery.",
   "scripts": {
     "start": "gulp watch",

@@ -1,8 +1,9 @@
 .timeline {
   .stop {
+    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-rows: auto 250px auto;
     @include responsive {
-      grid-template-columns: 1fr;
-      display: grid;
       grid-template-rows: auto calc(33vw * 2 / 3) auto;
     }
     &__button {
@@ -11,6 +12,11 @@
     &__image-wrap {
       grid-row: 2 / 3;
       height: 100%;
+    }
+    &__image {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .events {
       grid-row: 3 / 4;
