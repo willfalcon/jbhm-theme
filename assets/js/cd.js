@@ -116,39 +116,42 @@ jQuery(document).ready(function($) {
 
 
   //Highlight search query in search results
-  var searchQuery = document.getElementById('searchQuery').innerHTML;
-  var searchTitles = document.querySelectorAll('h3');
-  var insertStart = '<span class="accent">';
-  var insertEnd = '</span>';
+  if (document.getElementById('searchQuery')) {
+    var searchQuery = document.getElementById('searchQuery').innerHTML;
+    var searchTitles = document.querySelectorAll('h3');
+    var insertStart = '<span class="accent">';
+    var insertEnd = '</span>';
 
-  for (var title of searchTitles) {
+    for (var title of searchTitles) {
 
-    var stringStart = title.innerText.toLowerCase().search(searchQuery);
+      var stringStart = title.innerText.toLowerCase().search(searchQuery);
 
-    if ( stringStart >= 0 ) {
-      var start = title.innerText.slice(0, stringStart);
-      var insertEndPos = stringStart + searchQuery.length;
+      if ( stringStart >= 0 ) {
+        var start = title.innerText.slice(0, stringStart);
+        var insertEndPos = stringStart + searchQuery.length;
 
-      var keep = title.innerText.slice(stringStart, insertEndPos);
-      var end = title.innerText.slice(insertEndPos);
-      title.innerHTML = start + insertStart + keep + insertEnd + end;
+        var keep = title.innerText.slice(stringStart, insertEndPos);
+        var end = title.innerText.slice(insertEndPos);
+        title.innerHTML = start + insertStart + keep + insertEnd + end;
+      }
+
     }
 
-  }
+    var searchExcerpts = document.querySelectorAll('.cd-search-result p');
 
-  var searchExcerpts = document.querySelectorAll('.cd-search-result p');
+    for (var excerpt of searchExcerpts) {
 
-  for (var excerpt of searchExcerpts) {
+      var stringStart = excerpt.innerText.toLowerCase().search(searchQuery);
 
-    var stringStart = excerpt.innerText.toLowerCase().search(searchQuery);
-
-    if ( stringStart >= 0 ) {
-      var start = excerpt.innerText.slice(0, stringStart);
-      var insertEndPos = stringStart + searchQuery.length;
-      var keep = excerpt.innerText.slice(stringStart, insertEndPos);
-      var end = excerpt.innerText.slice(insertEndPos);
-      excerpt.innerHTML = start + insertStart + keep + insertEnd + end;
+      if ( stringStart >= 0 ) {
+        var start = excerpt.innerText.slice(0, stringStart);
+        var insertEndPos = stringStart + searchQuery.length;
+        var keep = excerpt.innerText.slice(stringStart, insertEndPos);
+        var end = excerpt.innerText.slice(insertEndPos);
+        excerpt.innerHTML = start + insertStart + keep + insertEnd + end;
+      }
     }
+
   }
 
 
