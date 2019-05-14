@@ -15,7 +15,7 @@
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'component_styles', get_template_directory_uri() . '/assets/css/sass-style.css' );
-    wp_enqueue_style( 'timeline_styles', get_template_directory_uri() . '/blocks/timeline/dist/timeline-styles.css' );
+    wp_enqueue_style( 'timeline_styles', get_template_directory_uri() . '/blocks/timeline/dist/timeline-styles.css', array(), $ver );
 
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', '', '', true );
     wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'popper' ), '', true );
