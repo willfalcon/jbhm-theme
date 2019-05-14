@@ -2,10 +2,12 @@
 
 /* Styles and scripts */
 
-  add_action( 'wp_enqueue_scripts', 'cd_theme_styles' );
-  add_action( 'wp_enqueue_scripts', 'cd_theme_scripts' );
+  add_action( 'wp_enqueue_scripts', 'cd_theme_enqueue' );
 
-  function cd_theme_styles() {
+  function cd_theme_enqueue() {
+    
+    $ver = wp_get_theme()->get('Version');
+
     wp_enqueue_style( 'boostrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
     wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/assets/fa/css/font-awesome.min.css' );
     wp_enqueue_style( 'lightbox_css', get_template_directory_uri() . '/assets/lightbox/dist/css/lightbox.min.css' );
@@ -13,18 +15,15 @@
     wp_enqueue_style( 'typekit', 'https://use.typekit.net/lci6lco.css' );
     wp_enqueue_style( 'main_styles', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'component_styles', get_template_directory_uri() . '/assets/css/sass-style.css' );
-    wp_enqueue_Style( '2.0_styles', get_template_directory_uri() . '/dist/main.min.css' );
-  }
+    wp_enqueue_style( 'timeline_styles', get_template_directory_uri() . '/blocks/timeline/dist/timeline-styles.css' );
 
-  function cd_theme_scripts() {
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', '', '', true );
     wp_enqueue_script( 'bootstrap_js', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array( 'jquery', 'popper' ), '', true );
     wp_enqueue_script( 'cd_js', get_template_directory_uri() . '/assets/js/cd.js', array( 'jquery' ), '', true );
-    // wp_enqueue_script( 'images_loaded', get_template_directory_uri() . '/assets/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '', true );
-    // wp_enqueue_script( 'masonry', get_template_directory_uri() . '/assets/js/masonry.pkgd.min.js', array( 'jquery', 'images_loaded' ) );
     wp_enqueue_script( 'lightbox_js', get_template_directory_uri() . '/assets/lightbox/dist/js/lightbox.min.js', array( 'jquery' ), false, true);
     wp_enqueue_script( 'flickity_js', 'https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js', array( 'jquery' ), false );
     wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/modernizr-custom.js' );
+    wp_enqueue_script( 'timeline_scripts', get_template_directory_uri() . '/blocks/timeline/dist/timeline.js', array(), $ver, true );
   }
 
 /* Add Theme Supports */
@@ -86,13 +85,17 @@
   // }
 
   // include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
-
-  acf_add_options_page(
-    array(
+  
+  if ( function_exists( 'acf_add_options_page' ) ) {
+    acf_add_options_page(array(
       'page_title' => 'Site Options',
       'position' => 3
-    )
-  );
+    ));
+    acf_add_options_page(array(
+      'page_title' => 'Timeline Editor',
+      'position' => 53.5   
+    ));
+  }
 
   function filter_project_picker_industries( $args, $field, $post_id ) {
 
@@ -275,3 +278,11 @@ function acf_load_office_field_choices($field) {
     if( function_exists('acf_register_block') ) {
       add_action('acf/init', 'register_acf_blocks');
     }
+
+    function timeline_shortcode($atts) {
+      ob_start();
+      get_template_part( 'template-parts/timeline' );
+      return ob_get_clean();
+    }
+
+    add_shortcode( 'jbhm-timeline', 'timeline_shortcode' );

@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg cd-nav<?php if ( wp_is_mobile() ) { echo ' cd-mobile-nav'; } ?>" id="cd_header">
 
-
-  <a class="navbar-brand img-fluid mr-auto" href="<?php bloginfo('url'); ?>">
+  <a class="navbar-brand img-fluid mr-auto navbar-logo" href="<?php bloginfo('url'); ?>">
     <?php if ( get_field( 'logo', 'option' ) ) : ?>
       <?php $logo = get_field( 'logo', 'option' ); ?>
       <img class="cd-logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>"/>
