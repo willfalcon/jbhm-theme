@@ -22,6 +22,10 @@
 
     <?php $awards // get_template_part( 'template-parts/awards-query.php') ?>
     
+    <div class="design-excellence">
+      <?php the_field( 'design_excellence_section' ); ?>
+    </div>
+    
   </div>
 </div>
 
