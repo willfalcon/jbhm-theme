@@ -6,7 +6,7 @@
 
   $gallery = get_field( 'gallery' );
 
-  if ( $gallery && ! is_ie() ) {
+  if ( $gallery ) {
     $slider = false;
     foreach ( $gallery as $image ) {
       if ( get_field( 'slider', $image['ID'] ) ) {
@@ -16,7 +16,7 @@
     }
   }
 
-  if ( $slider && ! is_ie() ) {
+  if ( $slider ) {
     get_header( 'slider' );
   } elseif ( get_field( 'header_img' ) || ! empty( $gallery ) ) {
     get_header( 'header_img' );
